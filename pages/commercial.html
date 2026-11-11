@@ -1,0 +1,91 @@
+﻿<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>COMMERCIAL ADS | Rixon Sunny</title>
+  <meta name="description" content="Short ads for your product or service, built to get people to buy or enquire.">
+  <meta name="author" content="Rixon Sunny">
+  <meta name="theme-color" content="#0a0a0c">
+
+  <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
+  <link rel="preload" href="../assets/fonts/antonio-bold.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="../assets/fonts/inter-regular.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="../assets/css/style.min.css">
+</head>
+<body data-category="commercial" class="page-fade-in subpage-body">
+
+  <!-- Fixed Navbar -->
+  <header class="site-header" id="siteHeader">
+    <div class="nav-grid">
+      <a href="../index.html" class="nav-brand" aria-label="Rixon Sunny Homepage">RIXON SUNNY</a>
+      <div class="nav-links-desktop">
+        <a href="../index.html#projects" class="nav-item">PROJECTS</a>
+        <a href="../index.html#about" class="nav-item">ABOUT</a>
+      </div>
+      <div class="nav-cta">
+        <a href="contact.html" class="nav-item">LET'S TALK</a>
+      </div>
+      <button type="button" class="nav-menu-btn" id="menuToggle" aria-label="Toggle navigation menu" aria-expanded="false">MENU</button>
+    </div>
+  </header>
+
+  <!-- Mobile Menu Overlay -->
+  <div class="mobile-menu-overlay" id="mobileMenu" aria-hidden="true">
+    <div class="mobile-menu-inner">
+      <button type="button" class="mobile-menu-close" id="menuClose" aria-label="Close menu">&times;</button>
+      <nav class="mobile-nav-links" aria-label="Mobile Navigation">
+        <a href="../index.html" class="mobile-nav-link">HOME</a>
+        <a href="../index.html#projects" class="mobile-nav-link">PROJECTS</a>
+        <a href="../index.html#about" class="mobile-nav-link">ABOUT</a>
+        <a href="contact.html" class="mobile-nav-link">LET'S TALK</a>
+      </nav>
+    </div>
+  </div>
+
+  <main style="flex: 1;">
+    <header class="category-page-header">
+      <h1 class="category-h1">COMMERCIAL ADS</h1>
+      <div class="category-meta-line">
+        <span class="category-count" id="categoryCount">Loading films...</span>
+      </div>
+      <p class="category-desc">Short ads for your product or service, built to get people to buy or enquire.</p>
+    </header>
+
+    <div class="category-gallery-wrap">
+      <div class="category-grid-landscape" id="categoryLandscapeGrid"></div>
+      <div class="category-grid-vertical" id="categoryVerticalGrid"></div>
+      <div id="categoryEmptyState" style="display: none; padding: 48px 0; color: rgba(255, 255, 255, 0.6);">
+        Films in this category will be available soon.
+      </div>
+    </div>
+  </main>
+
+  <!-- Lightbox Modal -->
+  <div id="lightboxOverlay" class="lightbox-overlay" role="dialog" aria-modal="true" aria-hidden="true" aria-label="Video Player">
+    <button type="button" id="lightboxCloseBtn" class="lightbox-close-btn" aria-label="Close video player">&times;</button>
+    <button type="button" id="lightboxPrevBtn" class="lightbox-nav-btn lightbox-prev-btn" aria-label="Previous video">&#9664;</button>
+    <button type="button" id="lightboxNextBtn" class="lightbox-nav-btn lightbox-next-btn" aria-label="Next video">&#9654;</button>
+    <div id="lightboxDialog" class="lightbox-dialog landscape"></div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="site-footer-row" style="padding: 28px var(--page-margin);">
+    <div class="footer-left">
+      <span>&copy; 2026 Rixon Sunny</span>
+    </div>
+    <div class="footer-center">
+      <a href="https://wa.me/919562384588" target="_blank" rel="noopener">WHATSAPP</a>
+      <a href="mailto:rixon9370@gmail.com">EMAIL</a>
+      <a href="https://www.linkedin.com/in/rixon-sunny-999330397" target="_blank" rel="noopener">LINKEDIN</a>
+      <a href="https://github.com/rixonsunny" target="_blank" rel="noopener">GITHUB</a>
+      <a href="https://www.youtube.com/@Rixonsunny" target="_blank" rel="noopener">YOUTUBE</a>
+    </div>
+    <div class="footer-right">
+      <button type="button" class="footer-top-btn" id="backToTop">BACK TO TOP &uarr;</button>
+    </div>
+  </footer>
+
+  <script src="../assets/js/app.min.js" defer></script>
+</body>
+</html>

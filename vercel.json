@@ -1,0 +1,43 @@
+{
+  "cleanUrls": true,
+  "trailingSlash": false,
+  "rewrites": [
+    { "source": "/contact", "destination": "/pages/contact.html" },
+    { "source": "/cinematic", "destination": "/pages/cinematic.html" },
+    { "source": "/fashion-jewellery", "destination": "/pages/fashion-jewellery.html" },
+    { "source": "/commercial", "destination": "/pages/commercial.html" },
+    { "source": "/brand-films", "destination": "/pages/brand-films.html" },
+    { "source": "/food-retail", "destination": "/pages/food-retail.html" },
+    { "source": "/app-promos", "destination": "/pages/app-promos.html" },
+    { "source": "/work", "destination": "/pages/work.html" }
+  ],
+  "headers": [
+    {
+      "source": "/(.*)\\.(css|js|jpg|jpeg|png|webp|svg|mp4|pdf|woff2)",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=31536000, immutable"
+        }
+      ]
+    },
+    {
+      "source": "/(.*)\\.html",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "no-cache"
+        }
+      ]
+    },
+    {
+      "source": "/",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "no-cache"
+        }
+      ]
+    }
+  ]
+}

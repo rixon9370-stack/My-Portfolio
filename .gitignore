@@ -1,0 +1,67 @@
+# Dependencies
+node_modules/
+.pnpm-store/
+
+# Secrets, Tokens & Credentials
+.env
+.env.*
+*.env
+client_secret*.json
+token*.json
+*.pem
+*.key
+*.cert
+
+# Operating System Files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+Thumbs.db
+ehthumbs.db
+[Dd]esktop.ini
+
+# IDE & Editor Files
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# Executables & Binaries
+cloudflared.exe
+*.exe
+*.dll
+*.so
+*.dylib
+
+# Archives
+*.zip
+*.tar
+*.gz
+*.rar
+*.7z
+
+# Logs, Transcripts & Debug Outputs
+*.log
+*LINK.txt
+prompt_full.txt
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Automated Test Dumps & Screenshots
+screenshots/
+corner_check/
+screenshot.png
+devtools_dump*.html
+devtools_verify.html
+about_verify.html
+dom.html
+dump.js
+
+# Temporary & Scratch Files
+assets/assets/
+*.tmp
+*.bak
+*.swp

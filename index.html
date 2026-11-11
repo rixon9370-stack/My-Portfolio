@@ -1,0 +1,464 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Rixon Sunny | AI Video Creator</title>
+  <meta name="description" content="AI films and ads for brands, by Rixon Sunny in Wayanad, Kerala.">
+  <meta name="author" content="Rixon Sunny">
+  <meta name="theme-color" content="#0a0a0c">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Rixon Sunny | AI Video Creator">
+  <meta property="og:description" content="AI films and ads for brands, by Rixon Sunny in Wayanad, Kerala.">
+  <meta property="og:image" content="assets/posters/home.webp">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+
+  <!-- Preload Critical LCP Hero Poster & Fonts -->
+  <link rel="preload" as="image" href="assets/posters/home.webp" type="image/webp" fetchpriority="high">
+  <link rel="preload" href="assets/fonts/antonio-bold.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="assets/fonts/inter-regular.woff2" as="font" type="font/woff2" crossorigin>
+
+  <link rel="stylesheet" href="assets/css/style.min.css">
+</head>
+<body>
+
+  <!-- ======================================================================
+       1. FIXED NAVBAR
+       ====================================================================== -->
+  <header class="site-header" id="siteHeader">
+    <div class="nav-grid">
+      <a href="index.html" class="nav-brand" aria-label="Rixon Sunny Homepage">RIXON SUNNY</a>
+      <div class="nav-links-desktop">
+        <a href="#projects" class="nav-item">WORK</a>
+        <a href="#about" class="nav-item">ABOUT</a>
+      </div>
+      <div class="nav-cta">
+        <a href="pages/contact.html" class="nav-item">CONTACT</a>
+      </div>
+      <button type="button" class="nav-menu-btn" id="menuToggle" aria-label="Toggle navigation menu" aria-expanded="false">MENU</button>
+    </div>
+  </header>
+
+  <!-- Fullscreen Mobile Menu Overlay -->
+  <div class="mobile-menu-overlay" id="mobileMenu" aria-hidden="true">
+    <div class="mobile-menu-inner">
+      <button type="button" class="mobile-menu-close" id="menuClose" aria-label="Close menu">&times;</button>
+      <nav class="mobile-nav-links" aria-label="Mobile Navigation">
+        <a href="index.html" class="mobile-nav-link">HOME</a>
+        <a href="#projects" class="mobile-nav-link">WORK</a>
+        <a href="#about" class="mobile-nav-link">ABOUT</a>
+        <a href="pages/contact.html" class="mobile-nav-link">CONTACT</a>
+      </nav>
+    </div>
+  </div>
+
+  <main id="mainContent">
+
+    <!-- ======================================================================
+         2. HERO SECTION — Full-screen video with centered text
+         ====================================================================== -->
+    <section class="hero-fullscreen" id="hero">
+      <div class="hero-video-wrap">
+        <video id="heroVideo" class="hero-video" autoplay muted loop playsinline preload="auto" poster="assets/posters/home.webp" aria-hidden="true">
+          <source src="assets/videos/home.mp4" type="video/mp4">
+        </video>
+        <div class="hero-overlay"></div>
+      </div>
+
+      <div class="hero-headline-wrap">
+        <h1 class="hero-headline">RIXON<span class="hero-headline-break"><br></span> SUNNY</h1>
+      </div>
+
+      <div class="hero-bottom-bar">
+        <span class="hero-bottom-item">AI films and ads for brands</span>
+        <span class="hero-bottom-item">Wayanad, Kerala</span>
+        <span class="hero-bottom-item hero-clock-item" id="heroClock" aria-hidden="true">00:00:00 AM</span>
+        <span class="hero-bottom-item" id="heroCopyright">&copy; 2026 Rixon Sunny</span>
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         3. TICKER STRIP (Marquee Loop)
+         ====================================================================== -->
+    <div class="ticker-strip" aria-hidden="true">
+      <div class="ticker-track">
+        <div class="ticker-content">
+          <span class="ticker-item">CINEMATIC</span>
+          <span class="ticker-sep">&#9670;</span>
+          <span class="ticker-item">FASHION &amp; JEWELLERY</span>
+          <span class="ticker-sep">&#9670;</span>
+          <span class="ticker-item">COMMERCIAL</span>
+          <span class="ticker-sep">&#9670;</span>
+          <span class="ticker-item">BRAND FILMS</span>
+          <span class="ticker-sep">&#9670;</span>
+          <span class="ticker-item">RETAIL &amp; SHOPPING</span>
+          <span class="ticker-sep">&#9670;</span>
+          <span class="ticker-item">APP PROMOS</span>
+          <span class="ticker-sep">&#9670;</span>
+        </div>
+        <div class="ticker-content">
+          <span class="ticker-item">CINEMATIC</span>
+          <span class="ticker-sep">&#9670;</span>
+          <span class="ticker-item">FASHION &amp; JEWELLERY</span>
+          <span class="ticker-sep">&#9670;</span>
+          <span class="ticker-item">COMMERCIAL</span>
+          <span class="ticker-sep">&#9670;</span>
+          <span class="ticker-item">BRAND FILMS</span>
+          <span class="ticker-sep">&#9670;</span>
+          <span class="ticker-item">RETAIL &amp; SHOPPING</span>
+          <span class="ticker-sep">&#9670;</span>
+          <span class="ticker-item">APP PROMOS</span>
+          <span class="ticker-sep">&#9670;</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- ======================================================================
+         4. PROJECT SECTIONS — Full-screen video panels
+         Each section is 100vh with centered title, video bg, links to category
+         Sections WITHOUT a video file get a dark bg + poster image only
+         ====================================================================== -->
+    <div class="panels-section" id="projects" aria-label="Selected Projects">
+
+      <!-- Panel 1: Cinematic — HAS VIDEO -->
+      <a href="pages/cinematic.html" class="project-panel" id="cinematic" aria-label="Cinematic, 5 films">
+        <div class="panel-media">
+          <video class="panel-video" muted loop playsinline preload="none" poster="assets/posters/cinematic.webp" data-src="assets/videos/cinematic.mp4" aria-hidden="true"></video>
+          <div class="panel-overlay"></div>
+        </div>
+        <div class="panel-content">
+          <h2 class="panel-title">CINEMATIC</h2>
+          <p class="panel-count">5 films</p>
+          <span class="panel-view">VIEW</span>
+        </div>
+      </a>
+
+      <!-- Panel 2: Fashion & Jewellery — HAS VIDEO -->
+      <a href="pages/fashion-jewellery.html" class="project-panel" id="fashion-jewellery" aria-label="Fashion &amp; Jewellery, 10 films">
+        <div class="panel-media">
+          <video class="panel-video" muted loop playsinline preload="none" poster="assets/posters/fashion-jewellery.webp" data-src="assets/videos/fashion-jewellery.mp4" aria-hidden="true"></video>
+          <div class="panel-overlay"></div>
+        </div>
+        <div class="panel-content">
+          <h2 class="panel-title">FASHION &amp; JEWELLERY</h2>
+          <p class="panel-count">10 films</p>
+          <span class="panel-view">VIEW</span>
+        </div>
+      </a>
+
+      <!-- Panel 3: Commercial — HAS VIDEO -->
+      <a href="pages/commercial.html" class="project-panel" id="commercial" aria-label="Commercial, 8 films">
+        <div class="panel-media">
+          <video class="panel-video" muted loop playsinline preload="none" poster="assets/posters/commercial.webp" data-src="assets/videos/commercial.mp4" aria-hidden="true"></video>
+          <div class="panel-overlay"></div>
+        </div>
+        <div class="panel-content">
+          <h2 class="panel-title">COMMERCIAL</h2>
+          <p class="panel-count">8 films</p>
+          <span class="panel-view">VIEW</span>
+        </div>
+      </a>
+
+      <!-- Panel 4: Brand Films — HAS VIDEO -->
+      <a href="pages/brand-films.html" class="project-panel" id="brand-films" aria-label="Brand Films, 10 films">
+        <div class="panel-media">
+          <video class="panel-video" muted loop playsinline preload="none" poster="assets/posters/brand-films.webp" data-src="assets/videos/brand-films.mp4" aria-hidden="true"></video>
+          <div class="panel-overlay"></div>
+        </div>
+        <div class="panel-content">
+          <h2 class="panel-title">BRAND FILMS</h2>
+          <p class="panel-count">10 films</p>
+          <span class="panel-view">VIEW</span>
+        </div>
+      </a>
+
+      <!-- Panel 5: Retail & Shopping — NO VIDEO, poster image only -->
+      <a href="pages/food-retail.html" class="project-panel panel-no-video" id="food-retail" aria-label="Retail &amp; Shopping, 11 films">
+        <div class="panel-media">
+          <img class="panel-poster-img" src="assets/posters/food-retail.webp" alt="" aria-hidden="true" loading="lazy">
+          <div class="panel-overlay"></div>
+        </div>
+        <div class="panel-content">
+          <h2 class="panel-title">RETAIL &amp; SHOPPING</h2>
+          <p class="panel-count">11 films</p>
+          <span class="panel-view">VIEW</span>
+        </div>
+      </a>
+
+      <!-- Panel 6: App Promos — NO VIDEO, poster image only -->
+      <a href="pages/app-promos.html" class="project-panel panel-no-video" id="app-promos" aria-label="App Promos, 5 films">
+        <div class="panel-media">
+          <img class="panel-poster-img" src="assets/posters/app-promos.webp" alt="" aria-hidden="true" loading="lazy">
+          <div class="panel-overlay"></div>
+        </div>
+        <div class="panel-content">
+          <h2 class="panel-title">APP PROMOS</h2>
+          <p class="panel-count">5 films</p>
+          <span class="panel-view">VIEW</span>
+        </div>
+      </a>
+
+    </div>
+
+    <!-- ======================================================================
+         5. ABOUT + SERVICES + HOW I WORK
+         ====================================================================== -->
+    <div class="about-services-wrap" id="about">
+
+      <!-- About section (Two Columns on Desktop) -->
+      <div class="about-grid">
+        <!-- LEFT COLUMN (58%) -->
+        <div class="about-col-left">
+          <div class="about-tag">About</div>
+          <h2 class="about-headline">I MAKE AI VIDEOS THAT SELL.</h2>
+          <p class="about-subline">Cinematic commercial and brand videos, produced with AI.</p>
+          <div class="about-paragraphs">
+            <p>I'm Rixon Sunny, a freelance AI video producer based in Wayanad, Kerala. I create advertising for brands in India and international markets, delivering high-quality visuals with the speed and flexibility of AI production.</p>
+            <p>My work spans every format, from 15-second digital ads to productions of up to six minutes, including theatrical advertising.</p>
+            <p>I have delivered projects for brands in fashion, jewellery, food, retail, travel and technology.</p>
+            <p>I also manage Meta and Google advertising campaigns, so the finished video reaches the right audience.</p>
+          </div>
+          <div class="about-details-list">
+            <div class="about-detail-item">
+              <span class="about-detail-label">Location</span>
+              <span class="about-detail-value">Wayanad, Kerala, India</span>
+            </div>
+            <div class="about-detail-item">
+              <span class="about-detail-label">Markets</span>
+              <span class="about-detail-value">India &amp; International</span>
+            </div>
+            <div class="about-detail-item">
+              <span class="about-detail-label">Format range</span>
+              <span class="about-detail-value">15 sec – 6 min</span>
+            </div>
+          </div>
+          <div class="about-actions">
+            <a href="#projects" class="btn-about-primary">View my work &rarr;</a>
+            <a href="pages/contact.html" class="btn-about-secondary">Get in touch</a>
+          </div>
+        </div>
+
+        <!-- RIGHT COLUMN (42%) -->
+        <div class="about-col-right">
+          <!-- Stat Tiles (2+1 Grid) -->
+          <div class="about-stats-grid">
+            <div class="stat-tile">
+              <span class="stat-label">Shortest format</span>
+              <span class="stat-value">15 SEC</span>
+            </div>
+            <div class="stat-tile">
+              <span class="stat-label">Longest format</span>
+              <span class="stat-value">6 MIN</span>
+            </div>
+            <div class="stat-tile stat-tile-full">
+              <span class="stat-label">Ad platforms</span>
+              <span class="stat-value">META &amp; GOOGLE</span>
+            </div>
+          </div>
+
+          <!-- Brands Strip -->
+          <div class="about-brands-wrap">
+            <span class="about-brands-label">Brands I've created for</span>
+            <div class="about-brands-grid">
+              <div class="brand-tile">
+                <img src="assets/brands/lulu-mall.png" alt="LuLu Mall" class="brand-logo" loading="lazy">
+              </div>
+              <div class="brand-tile">
+                <img src="assets/brands/amana-toyota.png" alt="Amana Toyota" class="brand-logo" loading="lazy">
+              </div>
+              <div class="brand-tile">
+                <img src="assets/brands/odyssia.png" alt="Odyssia" class="brand-logo brand-logo-white" loading="lazy">
+              </div>
+              <div class="brand-tile">
+                <img src="assets/brands/rajakumari-group.png" alt="Rajakumari Group" class="brand-logo" loading="lazy">
+              </div>
+              <div class="brand-tile">
+                <img src="assets/brands/nesto.png" alt="Nesto" class="brand-logo" loading="lazy">
+              </div>
+              <div class="brand-tile">
+                <img src="assets/brands/nahdi-mandi.png" alt="Nahdi Mandi" class="brand-logo brand-logo-white" loading="lazy">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 1px Divider -->
+      <div class="section-divider"></div>
+
+      <!-- Services section (6 Boxes) -->
+      <div class="services-header" id="services">
+        <h2 class="services-heading">SERVICES</h2>
+        <p class="services-intro">Concept, script, visuals and final edit, all in one place.</p>
+      </div>
+
+      <div class="services-grid" id="servicesGrid">
+        <!-- 1: Cinematic Films -->
+        <button type="button" class="service-card" aria-expanded="false" aria-controls="service-panel-1">
+          <h3 class="service-card-headline">Cinematic Films</h3>
+          <div class="service-card-icon" aria-hidden="true">
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M7 1V13M1 7H13" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <div class="service-card-panel" id="service-panel-1" role="region" aria-label="Cinematic Films definition" aria-hidden="true">
+            <h4 class="service-panel-headline">Cinematic Films</h4>
+            <p class="service-panel-def">Story-driven films with striking visuals, camera movement and emotion.</p>
+          </div>
+        </button>
+
+        <!-- 2: Commercial Ads -->
+        <button type="button" class="service-card" aria-expanded="false" aria-controls="service-panel-2">
+          <h3 class="service-card-headline">Commercial Ads</h3>
+          <div class="service-card-icon" aria-hidden="true">
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M7 1V13M1 7H13" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <div class="service-card-panel" id="service-panel-2" role="region" aria-label="Commercial Ads definition" aria-hidden="true">
+            <h4 class="service-panel-headline">Commercial Ads</h4>
+            <p class="service-panel-def">Scroll-stopping ads for products and brands, made for social, TV and theatre.</p>
+          </div>
+        </button>
+
+        <!-- 3: Scriptwriting -->
+        <button type="button" class="service-card" aria-expanded="false" aria-controls="service-panel-3">
+          <h3 class="service-card-headline">Scriptwriting</h3>
+          <div class="service-card-icon" aria-hidden="true">
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M7 1V13M1 7H13" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <div class="service-card-panel" id="service-panel-3" role="region" aria-label="Scriptwriting definition" aria-hidden="true">
+            <h4 class="service-panel-headline">Scriptwriting</h4>
+            <p class="service-panel-def">Sharp concepts and scripts that say what your brand needs in seconds.</p>
+          </div>
+        </button>
+
+        <!-- 4: AI Poster Design -->
+        <button type="button" class="service-card" aria-expanded="false" aria-controls="service-panel-4">
+          <h3 class="service-card-headline">AI Poster Design</h3>
+          <div class="service-card-icon" aria-hidden="true">
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M7 1V13M1 7H13" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <div class="service-card-panel" id="service-panel-4" role="region" aria-label="AI Poster Design definition" aria-hidden="true">
+            <h4 class="service-panel-headline">AI Poster Design</h4>
+            <p class="service-panel-def">Eye-catching posters and campaign visuals, ready for print and digital.</p>
+          </div>
+        </button>
+
+        <!-- 5: Editing & Motion Graphics -->
+        <button type="button" class="service-card" aria-expanded="false" aria-controls="service-panel-5">
+          <h3 class="service-card-headline">Editing &amp; Motion Graphics</h3>
+          <div class="service-card-icon" aria-hidden="true">
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M7 1V13M1 7H13" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <div class="service-card-panel" id="service-panel-5" role="region" aria-label="Editing &amp; Motion Graphics definition" aria-hidden="true">
+            <h4 class="service-panel-headline">Editing &amp; Motion Graphics</h4>
+            <p class="service-panel-def">Clean edits, smooth animation and finishing that makes every frame polished.</p>
+          </div>
+        </button>
+
+        <!-- 6: AI Music & Sound -->
+        <button type="button" class="service-card" aria-expanded="false" aria-controls="service-panel-6">
+          <h3 class="service-card-headline">AI Music &amp; Sound</h3>
+          <div class="service-card-icon" aria-hidden="true">
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M7 1V13M1 7H13" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <div class="service-card-panel" id="service-panel-6" role="region" aria-label="AI Music &amp; Sound definition" aria-hidden="true">
+            <h4 class="service-panel-headline">AI Music &amp; Sound</h4>
+            <p class="service-panel-def">Original soundtracks and sound design, made to match the mood of your film.</p>
+          </div>
+        </button>
+      </div>
+
+      <!-- How I Work section -->
+      <div class="process-section" id="how-i-work">
+        <h2 class="section-heading-big">How I Work</h2>
+        <div class="process-grid">
+          <div class="process-step">
+            <span class="step-num">01</span>
+            <h3 class="step-title">Brief</h3>
+            <p class="step-desc">
+              We define your project goals, aesthetic references, target platforms, and delivery schedule.
+            </p>
+          </div>
+          <div class="process-step">
+            <span class="step-num">02</span>
+            <h3 class="step-title">Concept and generation</h3>
+            <p class="step-desc">
+              I develop precise prompts and generate cinematic scenes using Runway Gen-3, Kling AI, Flux.1, and Luma Dream Machine.
+            </p>
+          </div>
+          <div class="process-step">
+            <span class="step-num">03</span>
+            <h3 class="step-title">Edit and delivery</h3>
+            <p class="step-desc">
+              I handle pacing, color grading, sound design, and custom format exports optimized for your audience.
+            </p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- ======================================================================
+         6. CTA AND FOOTER
+         ====================================================================== -->
+    <section class="cta-footer-section">
+      <div class="cta-center-wrap">
+        <a href="pages/contact.html" class="cta-rolling-btn" aria-label="START A PROJECT">
+          <span class="cta-rolling-text" aria-hidden="true">
+            <span class="roll-char" style="--char-idx: 0;"><span class="roll-char-inner"><span class="char-top">S</span><span class="char-bottom">S</span></span></span>
+            <span class="roll-char" style="--char-idx: 1;"><span class="roll-char-inner"><span class="char-top">T</span><span class="char-bottom">T</span></span></span>
+            <span class="roll-char" style="--char-idx: 2;"><span class="roll-char-inner"><span class="char-top">A</span><span class="char-bottom">A</span></span></span>
+            <span class="roll-char" style="--char-idx: 3;"><span class="roll-char-inner"><span class="char-top">R</span><span class="char-bottom">R</span></span></span>
+            <span class="roll-char" style="--char-idx: 4;"><span class="roll-char-inner"><span class="char-top">T</span><span class="char-bottom">T</span></span></span>
+            <span class="roll-char roll-space">&nbsp;</span>
+            <span class="roll-char" style="--char-idx: 5;"><span class="roll-char-inner"><span class="char-top">A</span><span class="char-bottom">A</span></span></span>
+            <span class="roll-char roll-space">&nbsp;</span>
+            <span class="roll-char" style="--char-idx: 6;"><span class="roll-char-inner"><span class="char-top">P</span><span class="char-bottom">P</span></span></span>
+            <span class="roll-char" style="--char-idx: 7;"><span class="roll-char-inner"><span class="char-top">R</span><span class="char-bottom">R</span></span></span>
+            <span class="roll-char" style="--char-idx: 8;"><span class="roll-char-inner"><span class="char-top">O</span><span class="char-bottom">O</span></span></span>
+            <span class="roll-char" style="--char-idx: 9;"><span class="roll-char-inner"><span class="char-top">J</span><span class="char-bottom">J</span></span></span>
+            <span class="roll-char" style="--char-idx: 10;"><span class="roll-char-inner"><span class="char-top">E</span><span class="char-bottom">E</span></span></span>
+            <span class="roll-char" style="--char-idx: 11;"><span class="roll-char-inner"><span class="char-top">C</span><span class="char-bottom">C</span></span></span>
+            <span class="roll-char" style="--char-idx: 12;"><span class="roll-char-inner"><span class="char-top">T</span><span class="char-bottom">T</span></span></span>
+          </span>
+          <span class="cta-underline" aria-hidden="true"></span>
+        </a>
+      </div>
+
+      <footer class="site-footer-row">
+        <div class="footer-left">
+          <span>&copy; 2026 Rixon Sunny</span>
+          <span class="footer-edu">Diploma in Digital Marketing, 2025</span>
+        </div>
+        <div class="footer-center">
+          <a href="https://wa.me/919562384588" target="_blank" rel="noopener">WHATSAPP</a>
+          <a href="mailto:rixon9370@gmail.com">EMAIL</a>
+          <a href="https://www.linkedin.com/in/rixon-sunny-999330397" target="_blank" rel="noopener">LINKEDIN</a>
+          <a href="https://github.com/rixonsunny" target="_blank" rel="noopener">GITHUB</a>
+          <a href="https://www.youtube.com/@Rixonsunny" target="_blank" rel="noopener">YOUTUBE</a>
+        </div>
+        <div class="footer-right">
+          <button type="button" class="footer-top-btn" id="backToTop">BACK TO TOP &uarr;</button>
+        </div>
+      </footer>
+    </section>
+
+  </main>
+
+  <script src="assets/js/app.min.js" defer></script>
+</body>
+</html>
