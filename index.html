@@ -16,6 +16,7 @@
 
   <!-- Favicon -->
   <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+  <meta name="format-detection" content="telephone=no, date=no, address=no, email=no">
 
   <!-- Preload Critical LCP Hero Poster & Fonts -->
   <link rel="preload" as="image" href="assets/posters/home.webp" type="image/webp" fetchpriority="high">
@@ -207,21 +208,31 @@
     <!-- ======================================================================
          5. ABOUT + SERVICES + HOW I WORK
          ====================================================================== -->
-    <div class="about-services-wrap" id="about">
+    <div class="about-services-wrap">
 
-      <!-- About section (Two Columns on Desktop) -->
-      <div class="about-grid">
-        <!-- LEFT COLUMN (58%) -->
-        <div class="about-col-left">
-          <div class="about-tag">About</div>
+      <!-- ======================================================================
+           3. ABOUT SECTION (Single Centered Column)
+           ====================================================================== -->
+      <section class="about-section" id="about" aria-label="About Rixon Sunny">
+        <div class="about-container">
+          <!-- 1. "ABOUT" label -->
+          <span class="about-tag">About</span>
+
+          <!-- 2. Headline -->
           <h2 class="about-headline">I MAKE AI VIDEOS THAT SELL.</h2>
+
+          <!-- 3. Subheadline -->
           <p class="about-subline">Cinematic commercial and brand videos, produced with AI.</p>
+
+          <!-- 4. The 4 paragraphs -->
           <div class="about-paragraphs">
             <p>I'm Rixon Sunny, a freelance AI video producer based in Wayanad, Kerala. I create advertising for brands in India and international markets, delivering high-quality visuals with the speed and flexibility of AI production.</p>
             <p>My work spans every format, from 15-second digital ads to productions of up to six minutes, including theatrical advertising.</p>
             <p>I have delivered projects for brands in fashion, jewellery, food, retail, travel and technology.</p>
             <p>I also manage Meta and Google advertising campaigns, so the finished video reaches the right audience.</p>
           </div>
+
+          <!-- 5. Details row (Location / Markets / Format range) -->
           <div class="about-details-list">
             <div class="about-detail-item">
               <span class="about-detail-label">Location</span>
@@ -236,56 +247,40 @@
               <span class="about-detail-value">15 sec – 6 min</span>
             </div>
           </div>
+
+          <!-- 6. Buttons (View my work / Get in touch) -->
           <div class="about-actions">
             <a href="#projects" class="btn-about-primary">View my work &rarr;</a>
             <a href="pages/contact.html" class="btn-about-secondary">Get in touch</a>
           </div>
-        </div>
 
-        <!-- RIGHT COLUMN (42%) -->
-        <div class="about-col-right">
-          <!-- Stat Tiles (2+1 Grid) -->
-          <div class="about-stats-grid">
-            <div class="stat-tile">
-              <span class="stat-label">Shortest format</span>
-              <span class="stat-value">15 SEC</span>
-            </div>
-            <div class="stat-tile">
-              <span class="stat-label">Longest format</span>
-              <span class="stat-value">6 MIN</span>
-            </div>
-            <div class="stat-tile stat-tile-full">
-              <span class="stat-label">Ad platforms</span>
-              <span class="stat-value">META &amp; GOOGLE</span>
-            </div>
-          </div>
-
-          <!-- Brands Strip -->
+          <!-- 7. Brands label & 8. The 6 logos in a 3x2 grid -->
           <div class="about-brands-wrap">
             <span class="about-brands-label">Brands I've created for</span>
             <div class="about-brands-grid">
-              <div class="brand-tile">
+              <div class="brand-grid-card">
                 <img src="assets/brands/lulu-mall.png" alt="LuLu Mall" class="brand-logo" loading="lazy">
               </div>
-              <div class="brand-tile">
+              <div class="brand-grid-card">
                 <img src="assets/brands/amana-toyota.png" alt="Amana Toyota" class="brand-logo" loading="lazy">
               </div>
-              <div class="brand-tile">
-                <img src="assets/brands/odyssia.png" alt="Odyssia" class="brand-logo brand-logo-white" loading="lazy">
+              <div class="brand-grid-card">
+                <img src="assets/brands/odyssia.png" alt="Odyssia" class="brand-logo" loading="lazy">
               </div>
-              <div class="brand-tile">
+              <div class="brand-grid-card">
                 <img src="assets/brands/rajakumari-group.png" alt="Rajakumari Group" class="brand-logo" loading="lazy">
               </div>
-              <div class="brand-tile">
+              <div class="brand-grid-card">
                 <img src="assets/brands/nesto.png" alt="Nesto" class="brand-logo" loading="lazy">
               </div>
-              <div class="brand-tile">
-                <img src="assets/brands/nahdi-mandi.png" alt="Nahdi Mandi" class="brand-logo brand-logo-white" loading="lazy">
+              <div class="brand-grid-card">
+                <img src="assets/brands/nahdi-mandi.png" alt="Nahdi Mandi" class="brand-logo" loading="lazy">
               </div>
             </div>
           </div>
+
         </div>
-      </div>
+      </section>
 
       <!-- 1px Divider -->
       <div class="section-divider"></div>
@@ -307,7 +302,7 @@
           </div>
           <div class="service-card-panel" id="service-panel-1" role="region" aria-label="Cinematic Films definition" aria-hidden="true">
             <h4 class="service-panel-headline">Cinematic Films</h4>
-            <p class="service-panel-def">Story-driven films with striking visuals, camera movement and emotion.</p>
+            <p class="service-panel-def">Story-driven films with striking visuals and cinematic motion, generated with Kling and Seedance.</p>
           </div>
         </button>
 
@@ -321,7 +316,7 @@
           </div>
           <div class="service-card-panel" id="service-panel-2" role="region" aria-label="Commercial Ads definition" aria-hidden="true">
             <h4 class="service-panel-headline">Commercial Ads</h4>
-            <p class="service-panel-def">Scroll-stopping ads for products and brands, made for social, TV and theatre.</p>
+            <p class="service-panel-def">Scroll-stopping brand and product ads, produced with Kling and Gemini for high-impact campaigns.</p>
           </div>
         </button>
 
@@ -335,7 +330,7 @@
           </div>
           <div class="service-card-panel" id="service-panel-3" role="region" aria-label="Scriptwriting definition" aria-hidden="true">
             <h4 class="service-panel-headline">Scriptwriting</h4>
-            <p class="service-panel-def">Sharp concepts and scripts that say what your brand needs in seconds.</p>
+            <p class="service-panel-def">Sharp concepts, storyboards and high-retention scripts developed with ChatGPT and Claude.</p>
           </div>
         </button>
 
@@ -349,7 +344,7 @@
           </div>
           <div class="service-card-panel" id="service-panel-4" role="region" aria-label="AI Poster Design definition" aria-hidden="true">
             <h4 class="service-panel-headline">AI Poster Design</h4>
-            <p class="service-panel-def">Eye-catching posters and campaign visuals, ready for print and digital.</p>
+            <p class="service-panel-def">Eye-catching campaign posters and key visuals, generated with Midjourney for print and digital.</p>
           </div>
         </button>
 
@@ -363,7 +358,7 @@
           </div>
           <div class="service-card-panel" id="service-panel-5" role="region" aria-label="Editing &amp; Motion Graphics definition" aria-hidden="true">
             <h4 class="service-panel-headline">Editing &amp; Motion Graphics</h4>
-            <p class="service-panel-def">Clean edits, smooth animation and finishing that makes every frame polished.</p>
+            <p class="service-panel-def">Clean pacing, precision color grading, motion graphics and polished finishing for every frame.</p>
           </div>
         </button>
 
@@ -377,38 +372,70 @@
           </div>
           <div class="service-card-panel" id="service-panel-6" role="region" aria-label="AI Music &amp; Sound definition" aria-hidden="true">
             <h4 class="service-panel-headline">AI Music &amp; Sound</h4>
-            <p class="service-panel-def">Original soundtracks and sound design, made to match the mood of your film.</p>
+            <p class="service-panel-def">Original soundtracks generated with Suno and studio-quality voiceovers produced with ElevenLabs.</p>
           </div>
         </button>
       </div>
 
-      <!-- How I Work section -->
-      <div class="process-section" id="how-i-work">
-        <h2 class="section-heading-big">How I Work</h2>
+      <!-- Workflow section -->
+      <section class="process-section" id="workflow" aria-label="Workflow">
+        <a id="how-i-work" aria-hidden="true" style="display:none;"></a>
+        <h2 class="section-heading-big">Workflow</h2>
+        <p class="process-subtitle">Every project begins with the brand itself — its goals, audience, competitors, and tone — before a single frame is made.</p>
         <div class="process-grid">
           <div class="process-step">
             <span class="step-num">01</span>
-            <h3 class="step-title">Brief</h3>
+            <h3 class="step-title">Brand Discovery</h3>
             <p class="step-desc">
-              We define your project goals, aesthetic references, target platforms, and delivery schedule.
+              Every project begins with the brand itself — its goals, audience, competitors, and tone — before a single frame is made.
             </p>
           </div>
           <div class="process-step">
             <span class="step-num">02</span>
-            <h3 class="step-title">Concept and generation</h3>
+            <h3 class="step-title">Brief</h3>
             <p class="step-desc">
-              I develop precise prompts and generate cinematic scenes using Runway Gen-3, Kling AI, Flux.1, and Luma Dream Machine.
+              Project goals, aesthetic references, target platforms, and delivery schedule are locked in upfront.
             </p>
           </div>
           <div class="process-step">
             <span class="step-num">03</span>
-            <h3 class="step-title">Edit and delivery</h3>
+            <h3 class="step-title">Concept &amp; Script</h3>
             <p class="step-desc">
-              I handle pacing, color grading, sound design, and custom format exports optimized for your audience.
+              The concept and script take shape, built around the brand's voice and the message it needs to send.
+            </p>
+          </div>
+          <div class="process-step">
+            <span class="step-num">04</span>
+            <h3 class="step-title">AI Generation</h3>
+            <p class="step-desc">
+              Prompting and direction are handled with Claude and ChatGPT; images are generated with Midjourney and Gemini; video is produced with Kling, Seedance, and Veo; audio and music are created with ElevenLabs and Suno.
+            </p>
+          </div>
+          <div class="process-step">
+            <span class="step-num">05</span>
+            <h3 class="step-title">Edit &amp; Delivery</h3>
+            <p class="step-desc">
+              Pacing, color grading, sound design, and export formats are finalized and optimized for the intended platform.
             </p>
           </div>
         </div>
-      </div>
+
+        <!-- Tools I Use Sub-section -->
+        <div class="workflow-tools">
+          <span class="workflow-tools-label">Tools I Use</span>
+          <div class="workflow-tools-list">
+            <span class="workflow-tool-pill">ChatGPT</span>
+            <span class="workflow-tool-pill">Claude</span>
+            <span class="workflow-tool-pill">Midjourney</span>
+            <span class="workflow-tool-pill">Gemini</span>
+            <span class="workflow-tool-pill">Kling</span>
+            <span class="workflow-tool-pill">Seedance</span>
+            <span class="workflow-tool-pill">Veo</span>
+            <span class="workflow-tool-pill">ElevenLabs</span>
+            <span class="workflow-tool-pill">Suno</span>
+          </div>
+        </div>
+      </section>
 
     </div>
 
@@ -442,13 +469,11 @@
       <footer class="site-footer-row">
         <div class="footer-left">
           <span>&copy; 2026 Rixon Sunny</span>
-          <span class="footer-edu">Diploma in Digital Marketing, 2025</span>
         </div>
         <div class="footer-center">
           <a href="https://wa.me/919562384588" target="_blank" rel="noopener">WHATSAPP</a>
           <a href="mailto:rixon9370@gmail.com">EMAIL</a>
           <a href="https://www.linkedin.com/in/rixon-sunny-999330397" target="_blank" rel="noopener">LINKEDIN</a>
-          <a href="https://github.com/rixonsunny" target="_blank" rel="noopener">GITHUB</a>
           <a href="https://www.youtube.com/@Rixonsunny" target="_blank" rel="noopener">YOUTUBE</a>
         </div>
         <div class="footer-right">

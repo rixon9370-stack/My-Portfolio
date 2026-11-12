@@ -31,6 +31,54 @@ document.addEventListener('DOMContentLoaded', () => {
   if (footerCopy) footerCopy.innerHTML = `&copy; ${currentYear} Rixon Sunny`;
 
   // --------------------------------------------------------------------------
+  // 1c. STICKY NAVBAR SCROLL BACKGROUND STATE
+  // Transparent with soft gradient scrim over Hero and full-screen visual sections.
+  // Switches to solid flat dark background exactly when the About section (id="about")
+  // reaches the top of the viewport, and reverts if scrolled back above.
+  // --------------------------------------------------------------------------
+  const siteHeader = document.getElementById('siteHeader');
+  const aboutSection = document.getElementById('about');
+
+  if (siteHeader) {
+    if (aboutSection) {
+      let isScrolled = false;
+
+      const updateNavState = () => {
+        const rect = aboutSection.getBoundingClientRect();
+        // Trigger solid background only once About section's top edge reaches the viewport top
+        const shouldBeScrolled = rect.top <= 80;
+        if (shouldBeScrolled !== isScrolled) {
+          isScrolled = shouldBeScrolled;
+          if (isScrolled) {
+            siteHeader.classList.add('nav-scrolled');
+          } else {
+            siteHeader.classList.remove('nav-scrolled');
+          }
+        }
+      };
+
+      // IntersectionObserver integration to watch About section
+      if ('IntersectionObserver' in window) {
+        const aboutObserver = new IntersectionObserver(() => {
+          updateNavState();
+        }, {
+          root: null,
+          rootMargin: '-80px 0px 0px 0px',
+          threshold: [0, 0.01, 0.1]
+        });
+        aboutObserver.observe(aboutSection);
+      }
+
+      window.addEventListener('scroll', updateNavState, { passive: true });
+      window.addEventListener('resize', updateNavState, { passive: true });
+      updateNavState();
+    } else {
+      // Subpages without an About section: solid dark background
+      siteHeader.classList.add('nav-scrolled');
+    }
+  }
+
+  // --------------------------------------------------------------------------
   // 2. LIVE INDIA TIME (IST Clock)
   // --------------------------------------------------------------------------
   const heroClock = document.getElementById('heroClock');
