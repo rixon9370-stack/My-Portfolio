@@ -3,14 +3,14 @@
   "cleanUrls": true,
   "trailingSlash": false,
   "rewrites": [
-    { "source": "/contact", "destination": "/pages/contact.html" },
-    { "source": "/cinematic", "destination": "/pages/cinematic.html" },
-    { "source": "/fashion-jewellery", "destination": "/pages/fashion-jewellery.html" },
-    { "source": "/commercial", "destination": "/pages/commercial.html" },
-    { "source": "/brand-films", "destination": "/pages/brand-films.html" },
-    { "source": "/food-retail", "destination": "/pages/food-retail.html" },
-    { "source": "/app-promos", "destination": "/pages/app-promos.html" },
-    { "source": "/work", "destination": "/pages/work.html" }
+    { "source": "/contact", "destination": "/pages/contact" },
+    { "source": "/cinematic", "destination": "/pages/cinematic" },
+    { "source": "/fashion-jewellery", "destination": "/pages/fashion-jewellery" },
+    { "source": "/commercial", "destination": "/pages/commercial" },
+    { "source": "/brand-films", "destination": "/pages/brand-films" },
+    { "source": "/food-retail", "destination": "/pages/food-retail" },
+    { "source": "/app-promos", "destination": "/pages/app-promos" },
+    { "source": "/work", "destination": "/pages/work" }
   ],
   "headers": [
     {
@@ -19,6 +19,15 @@
         {
           "key": "Cache-Control",
           "value": "public, max-age=31536000, immutable"
+        }
+      ]
+    },
+    {
+      "source": "/pages/(.*)",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "no-cache"
         }
       ]
     },
