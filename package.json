@@ -1,0 +1,9 @@
+{
+  "name": "rixon-sunny-portfolio",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Rixon Sunny — AI Video Creator Portfolio",
+  "scripts": {
+    "build": "node scripts/build_assets.js"
+  }
+}

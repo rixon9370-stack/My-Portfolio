@@ -10,7 +10,7 @@ The portfolio is built with clean, zero-dependency HTML5, CSS3, and JavaScript, 
 
 ```text
 My-Portfolio/
-├── index.html                  # Main homepage (Hero, Selected Work, About, Services, Contact CTA)
+├── index.html                  # Main homepage (Hero, Selected Work, About, Services, Workflow, Tools, Contact CTA)
 │
 ├── pages/                      # Website subpages & category showcases
 │   ├── cinematic.html          # Cinematic Films gallery
@@ -19,7 +19,7 @@ My-Portfolio/
 │   ├── brand-films.html        # Brand Films gallery
 │   ├── food-retail.html        # Retail & Shopping gallery
 │   ├── app-promos.html         # App Promo Videos gallery
-│   ├── contact.html            # Dedicated contact page & lead form
+│   ├── contact.html            # Dedicated contact page & minimal lead form
 │   └── work.html               # Redirect to index.html#projects
 │
 ├── assets/                     # Static assets & client-side bundles
