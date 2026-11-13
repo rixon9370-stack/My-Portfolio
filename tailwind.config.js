@@ -16,7 +16,7 @@ export default {
       },
       fontFamily: {
         display: ['Antonio', 'sans-serif'],
-        body: ['Inter', 'sans-serif'],
+        body: ['"Plus Jakarta Sans"', 'Inter', 'sans-serif'],
       },
       spacing: {
         'pageMargin': '28px',

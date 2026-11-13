@@ -1,7 +1,17 @@
 @import "tailwindcss";
 
+@theme {
+  --font-display: 'Antonio', sans-serif;
+  --font-body: 'Plus Jakarta Sans', sans-serif;
+  --color-bg-primary: #0a0a0c;
+  --color-bg-surface: #111115;
+  --color-bg-surface-hover: #18181f;
+}
+
 /* --------------------------------------------------------------------------
    0. FONTS & ROOT VARIABLES
+   Display Font: Antonio 700 Bold
+   Body Font: Plus Jakarta Sans (400, 500, 600, 700)
    -------------------------------------------------------------------------- */
 @font-face {
   font-family: 'Antonio';
@@ -13,29 +23,38 @@
 }
 
 @font-face {
-  font-family: 'Inter';
+  font-family: 'Plus Jakarta Sans';
   font-style: normal;
   font-weight: 400;
   font-display: swap;
-  src: url('/assets/fonts/inter-regular.woff2') format('woff2');
+  src: url('/assets/fonts/plus-jakarta-sans-400.woff2') format('woff2');
   unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
 }
 
 @font-face {
-  font-family: 'Inter';
+  font-family: 'Plus Jakarta Sans';
   font-style: normal;
   font-weight: 500;
   font-display: swap;
-  src: url('/assets/fonts/inter-medium.woff2') format('woff2');
+  src: url('/assets/fonts/plus-jakarta-sans-500.woff2') format('woff2');
   unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
 }
 
 @font-face {
-  font-family: 'Inter';
+  font-family: 'Plus Jakarta Sans';
   font-style: normal;
   font-weight: 600;
   font-display: swap;
-  src: url('/assets/fonts/inter-medium.woff2') format('woff2');
+  src: url('/assets/fonts/plus-jakarta-sans-600.woff2') format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url('/assets/fonts/plus-jakarta-sans-700.woff2') format('woff2');
   unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
 }
 
@@ -51,7 +70,7 @@
   --border-focus: #ffffff;
   --page-margin: 28px;
   --font-display: 'Antonio', -apple-system, BlinkMacSystemFont, sans-serif;
-  --font-body: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-body: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   --ease-out-cubic: cubic-bezier(0.16, 1, 0.3, 1);
   --ease-amber-roll: cubic-bezier(0.2, 0.7, 0.2, 1);
 }
@@ -69,6 +88,7 @@ html {
   font-family: var(--font-body);
   font-size: 16px;
   line-height: 1.5;
+  letter-spacing: -0.01em;
   scroll-behavior: smooth;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -77,13 +97,78 @@ html {
 body {
   background-color: var(--bg-primary);
   color: var(--text-primary);
+  font-family: var(--font-body);
   min-height: 100vh;
   position: relative;
   overflow-x: hidden;
+  letter-spacing: -0.01em;
+}
+
+/* Custom font utilities for direct fallback */
+.font-display {
+  font-family: var(--font-display) !important;
+}
+
+.font-body {
+  font-family: var(--font-body) !important;
 }
 
 /* --------------------------------------------------------------------------
-   2. PERSISTENT TICKER ANIMATION
+   2. UNIFIED TOP NAVBAR & HERO INFO ROW ALIGNMENT CONTAINER
+   Exact same max-width container, left/right padding, and 4-column alignment
+   -------------------------------------------------------------------------- */
+.site-aligned-row {
+  width: 100%;
+  max-width: 100%;
+  padding-left: var(--page-margin);
+  padding-right: var(--page-margin);
+  box-sizing: border-box;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+@media (max-width: 768px) {
+  .site-aligned-row {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+}
+
+.site-col-1 {
+  flex: 1 1 0%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  text-align: left;
+}
+
+.site-col-2 {
+  flex: 1 1 0%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  text-align: left;
+}
+
+.site-col-3 {
+  flex: 1 1 0%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  text-align: left;
+}
+
+.site-col-4 {
+  flex: 1 1 0%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  text-align: right;
+}
+
+/* --------------------------------------------------------------------------
+   3. PERSISTENT TICKER ANIMATION
    -------------------------------------------------------------------------- */
 @keyframes tickerScroll {
   from {
@@ -108,7 +193,7 @@ body {
 }
 
 /* --------------------------------------------------------------------------
-   3. PERSISTENT ROLLING CHARACTERS ANIMATION (CTA)
+   4. PERSISTENT ROLLING CHARACTERS ANIMATION (CTA)
    -------------------------------------------------------------------------- */
 .cta-rolling-btn {
   display: inline-block;
@@ -186,7 +271,7 @@ body {
 }
 
 /* --------------------------------------------------------------------------
-   4. PERSISTENT LIGHTBOX
+   5. PERSISTENT LIGHTBOX
    -------------------------------------------------------------------------- */
 .lightbox-dialog.landscape {
   width: 90vw;

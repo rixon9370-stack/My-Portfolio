@@ -34,85 +34,93 @@ export default function Navbar() {
           <div className="absolute top-0 left-0 right-0 h-44 bg-gradient-to-b from-black/60 to-transparent pointer-events-none -z-10 transition-opacity duration-300" />
         )}
 
-        <div className="w-full max-w-full px-6 sm:px-8 mx-auto flex justify-between items-center box-border pointer-events-auto">
-          {/* Brand */}
-          <Link
-            to="/"
-            className="font-display text-xl sm:text-2xl font-bold uppercase tracking-tight text-white hover:opacity-85 transition-opacity"
-            aria-label="Rixon Sunny Homepage"
-            onClick={() => {
-              if (isHome) window.scrollTo({ top: 0, behavior: 'smooth' });
-            }}
-          >
-            RIXON SUNNY
-          </Link>
-
-          {/* Desktop Links */}
-          <div className="hidden md:flex items-center gap-10">
-            {isHome ? (
-              <>
-                <a
-                  href="#projects"
-                  onClick={(e) => {
-                    e.preventDefault();
-                    handleNavClick('projects');
-                  }}
-                  className="font-body text-[13px] font-semibold uppercase tracking-wider text-white hover:opacity-70 transition-opacity"
-                >
-                  WORK
-                </a>
-                <a
-                  href="#about"
-                  onClick={(e) => {
-                    e.preventDefault();
-                    handleNavClick('about');
-                  }}
-                  className="font-body text-[13px] font-semibold uppercase tracking-wider text-white hover:opacity-70 transition-opacity"
-                >
-                  ABOUT
-                </a>
-              </>
-            ) : (
-              <>
-                <Link
-                  to="/#projects"
-                  className="font-body text-[13px] font-semibold uppercase tracking-wider text-white hover:opacity-70 transition-opacity"
-                >
-                  PROJECTS
-                </Link>
-                <Link
-                  to="/#about"
-                  className="font-body text-[13px] font-semibold uppercase tracking-wider text-white hover:opacity-70 transition-opacity"
-                >
-                  ABOUT
-                </Link>
-              </>
-            )}
-          </div>
-
-          {/* CTA Link */}
-          <div className="hidden md:block">
+        <div className="site-aligned-row pointer-events-auto">
+          {/* Column 1: Brand Logo */}
+          <div className="site-col-1">
             <Link
-              to="/contact"
-              className={`font-body text-[13px] font-semibold uppercase tracking-wider text-white hover:opacity-70 transition-opacity ${
-                location.pathname === '/contact' ? 'opacity-100 underline underline-offset-4' : ''
-              }`}
+              to="/"
+              className="font-display text-xl sm:text-2xl font-bold uppercase tracking-tight text-white hover:opacity-85 transition-opacity"
+              aria-label="Rixon Sunny Homepage"
+              onClick={() => {
+                if (isHome) window.scrollTo({ top: 0, behavior: 'smooth' });
+              }}
             >
-              {isHome ? 'CONTACT' : "LET'S TALK"}
+              RIXON SUNNY
             </Link>
           </div>
 
-          {/* Mobile Hamburger Button */}
-          <button
-            type="button"
-            className="md:hidden flex items-center gap-2 text-white font-body text-xs font-semibold uppercase tracking-widest p-2 hover:opacity-80 transition-opacity cursor-pointer"
-            onClick={() => setMobileMenuOpen(true)}
-            aria-label="Toggle navigation menu"
-            aria-expanded={mobileMenuOpen}
-          >
-            <span>MENU</span>
-            <Menu className="w-5 h-5" />
-          </button>
+          {/* Column 2: WORK / PROJECTS (Desktop) */}
+          <div className="site-col-2 hidden md:flex">
+            {isHome ? (
+              <a
+                href="#projects"
+                onClick={(e) => {
+                  e.preventDefault();
+                  handleNavClick('projects');
+                }}
+                className="font-body text-[13px] font-semibold uppercase tracking-wider text-white hover:opacity-70 transition-opacity"
+              >
+                WORK
+              </a>
+            ) : (
+              <Link
+                to="/#projects"
+                className="font-body text-[13px] font-semibold uppercase tracking-wider text-white hover:opacity-70 transition-opacity"
+              >
+                PROJECTS
+              </Link>
+            )}
+          </div>
+
+          {/* Column 3: ABOUT (Desktop) */}
+          <div className="site-col-3 hidden md:flex">
+            {isHome ? (
+              <a
+                href="#about"
+                onClick={(e) => {
+                  e.preventDefault();
+                  handleNavClick('about');
+                }}
+                className="font-body text-[13px] font-semibold uppercase tracking-wider text-white hover:opacity-70 transition-opacity"
+              >
+                ABOUT
+              </a>
+            ) : (
+              <Link
+                to="/#about"
+                className="font-body text-[13px] font-semibold uppercase tracking-wider text-white hover:opacity-70 transition-opacity"
+              >
+                ABOUT
+              </Link>
+            )}
+          </div>
+
+          {/* Column 4: CONTACT / MENU */}
+          <div className="site-col-4">
+            {/* Desktop Contact Link */}
+            <div className="hidden md:block">
+              <Link
+                to="/contact"
+                className={`font-body text-[13px] font-semibold uppercase tracking-wider text-white hover:opacity-70 transition-opacity ${
+                  location.pathname === '/contact' ? 'opacity-100 underline underline-offset-4' : ''
+                }`}
+              >
+                {isHome ? 'CONTACT' : "LET'S TALK"}
+              </Link>
+            </div>
+
+            {/* Mobile Hamburger Button */}
+            <button
+              type="button"
+              className="md:hidden flex items-center gap-2 text-white font-body text-xs font-semibold uppercase tracking-widest p-1 hover:opacity-80 transition-opacity cursor-pointer"
+              onClick={() => setMobileMenuOpen(true)}
+              aria-label="Toggle navigation menu"
+              aria-expanded={mobileMenuOpen}
+            >
+              <span>MENU</span>
+              <Menu className="w-5 h-5" />
+            </button>
+          </div>
         </div>
       </header>
 

@@ -76,19 +76,49 @@ export default function Hero() {
         </h1>
       </div>
 
-      {/* Bottom Information Bar */}
+      {/* Bottom Information Bar - Exactly Aligned with Top Navbar */}
       <div
         ref={bottomBarRef}
-        className="absolute bottom-6 left-0 right-0 z-30 w-full px-6 sm:px-8 flex flex-col md:flex-row justify-between items-start md:items-center font-body text-xs sm:text-sm md:text-[15px] font-medium text-white tracking-[-0.005em] pointer-events-none opacity-0 gap-2 md:gap-0"
+        className="absolute bottom-6 left-0 right-0 z-30 w-full pointer-events-none opacity-0"
       >
-        <span className="whitespace-nowrap">AI films and ads for brands</span>
-        <span className="whitespace-nowrap">Wayanad, Kerala</span>
-        <span className="whitespace-nowrap font-mono tabular-nums tracking-wider text-white/90">
-          {clock}
-        </span>
-        <span className="whitespace-nowrap text-white/80">
-          &copy; {currentYear} Rixon Sunny
-        </span>
+        {/* Desktop 4-Column Row (Matches Top Navbar columns 1:1) */}
+        <div className="hidden md:flex site-aligned-row font-body text-xs sm:text-sm md:text-[15px] font-medium text-white tracking-[-0.005em]">
+          {/* Column 1: Aligns directly under Logo */}
+          <div className="site-col-1">
+            <span className="whitespace-nowrap">AI films and ads for brands</span>
+          </div>
+
+          {/* Column 2: Aligns directly under WORK */}
+          <div className="site-col-2">
+            <span className="whitespace-nowrap">Wayanad, Kerala</span>
+          </div>
+
+          {/* Column 3: Aligns directly under ABOUT */}
+          <div className="site-col-3">
+            <span className="whitespace-nowrap font-mono tabular-nums tracking-wider text-white/90">
+              {clock}
+            </span>
+          </div>
+
+          {/* Column 4: Aligns directly under CONTACT */}
+          <div className="site-col-4">
+            <span className="whitespace-nowrap text-white/80">
+              &copy; {currentYear} Rixon Sunny
+            </span>
+          </div>
+        </div>
+
+        {/* Mobile 2x2 Grid */}
+        <div className="flex md:hidden px-5 justify-between items-center text-xs font-medium text-white gap-2">
+          <div className="flex flex-col gap-1 text-left">
+            <span>AI films and ads for brands</span>
+            <span className="text-white/70">Wayanad, Kerala</span>
+          </div>
+          <div className="flex flex-col gap-1 text-right">
+            <span className="font-mono tabular-nums">{clock}</span>
+            <span className="text-white/70">&copy; {currentYear} Rixon Sunny</span>
+          </div>
+        </div>
       </div>
     </section>
   );
