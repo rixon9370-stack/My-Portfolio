@@ -1,16 +1,9 @@
 {
-  "outputDirectory": ".",
+  "outputDirectory": "dist",
   "cleanUrls": true,
   "trailingSlash": false,
   "rewrites": [
-    { "source": "/contact", "destination": "/pages/contact" },
-    { "source": "/cinematic", "destination": "/pages/cinematic" },
-    { "source": "/fashion-jewellery", "destination": "/pages/fashion-jewellery" },
-    { "source": "/commercial", "destination": "/pages/commercial" },
-    { "source": "/brand-films", "destination": "/pages/brand-films" },
-    { "source": "/food-retail", "destination": "/pages/food-retail" },
-    { "source": "/app-promos", "destination": "/pages/app-promos" },
-    { "source": "/work", "destination": "/pages/work" }
+    { "source": "/(.*)", "destination": "/index.html" }
   ],
   "headers": [
     {
@@ -23,25 +16,7 @@
       ]
     },
     {
-      "source": "/pages/(.*)",
-      "headers": [
-        {
-          "key": "Cache-Control",
-          "value": "no-cache"
-        }
-      ]
-    },
-    {
-      "source": "/(.*)\\.html",
-      "headers": [
-        {
-          "key": "Cache-Control",
-          "value": "no-cache"
-        }
-      ]
-    },
-    {
-      "source": "/",
+      "source": "/(.*)",
       "headers": [
         {
           "key": "Cache-Control",

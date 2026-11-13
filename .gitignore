@@ -1,6 +1,7 @@
 # Dependencies
 node_modules/
 .pnpm-store/
+dist/
 
 # Secrets, Tokens & Credentials
 .env

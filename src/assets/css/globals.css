@@ -1,0 +1,212 @@
+@import "tailwindcss";
+
+/* --------------------------------------------------------------------------
+   0. FONTS & ROOT VARIABLES
+   -------------------------------------------------------------------------- */
+@font-face {
+  font-family: 'Antonio';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url('/assets/fonts/antonio-bold.woff2') format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('/assets/fonts/inter-regular.woff2') format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url('/assets/fonts/inter-medium.woff2') format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url('/assets/fonts/inter-medium.woff2') format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+:root {
+  --bg-primary: #0a0a0c;
+  --bg-surface: #111115;
+  --bg-surface-hover: #18181f;
+  --text-primary: #ffffff;
+  --text-secondary: rgba(255, 255, 255, 0.85);
+  --text-muted: rgba(255, 255, 255, 0.60);
+  --border-subtle: rgba(255, 255, 255, 0.10);
+  --border-medium: rgba(255, 255, 255, 0.15);
+  --border-focus: #ffffff;
+  --page-margin: 28px;
+  --font-display: 'Antonio', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-body: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  --ease-out-cubic: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-amber-roll: cubic-bezier(0.2, 0.7, 0.2, 1);
+}
+
+/* --------------------------------------------------------------------------
+   1. RESET & BASE
+   -------------------------------------------------------------------------- */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+html {
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  font-family: var(--font-body);
+  font-size: 16px;
+  line-height: 1.5;
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  min-height: 100vh;
+  position: relative;
+  overflow-x: hidden;
+}
+
+/* --------------------------------------------------------------------------
+   2. PERSISTENT TICKER ANIMATION
+   -------------------------------------------------------------------------- */
+@keyframes tickerScroll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.ticker-track {
+  display: flex;
+  align-items: center;
+  white-space: nowrap;
+  width: max-content;
+  animation: tickerScroll 40s linear infinite;
+  will-change: transform;
+}
+
+.ticker-track:hover {
+  animation-play-state: paused;
+}
+
+/* --------------------------------------------------------------------------
+   3. PERSISTENT ROLLING CHARACTERS ANIMATION (CTA)
+   -------------------------------------------------------------------------- */
+.cta-rolling-btn {
+  display: inline-block;
+  cursor: pointer;
+  text-decoration: none;
+  background: none;
+  border: none;
+  padding: 0;
+  text-align: center;
+  position: relative;
+}
+
+.cta-rolling-text {
+  display: inline-flex;
+  font-family: var(--font-display);
+  font-size: clamp(3.2rem, 9vw, 9.5rem);
+  font-weight: 700;
+  line-height: 1;
+  text-transform: uppercase;
+  color: #ffffff;
+  letter-spacing: -0.015em;
+  user-select: none;
+}
+
+.roll-char {
+  display: inline-block;
+  height: 1em;
+  overflow: hidden;
+  position: relative;
+  vertical-align: top;
+}
+
+.roll-space {
+  width: 0.28em;
+  display: inline-block;
+}
+
+.roll-char-inner {
+  display: block;
+  transition: transform 0.65s var(--ease-amber-roll);
+  transition-delay: calc(var(--char-idx, 0) * 0.022s);
+  will-change: transform;
+}
+
+.char-top,
+.char-bottom {
+  display: block;
+  height: 1em;
+  line-height: 1;
+}
+
+.char-bottom {
+  opacity: 0.85;
+}
+
+.cta-rolling-btn:hover .roll-char-inner,
+.cta-rolling-btn:focus-visible .roll-char-inner {
+  transform: translateY(-50%);
+}
+
+.cta-underline {
+  display: block;
+  width: 100%;
+  height: 2px;
+  background-color: #ffffff;
+  margin-top: 14px;
+  transform: scaleX(0);
+  transform-origin: center center;
+  transition: transform 0.4s var(--ease-out-cubic);
+}
+
+.cta-rolling-btn:hover .cta-underline,
+.cta-rolling-btn:focus-visible .cta-underline {
+  transform: scaleX(1);
+}
+
+/* --------------------------------------------------------------------------
+   4. PERSISTENT LIGHTBOX
+   -------------------------------------------------------------------------- */
+.lightbox-dialog.landscape {
+  width: 90vw;
+  max-width: 1200px;
+  aspect-ratio: 16 / 9;
+}
+
+.lightbox-dialog.vertical {
+  height: 85vh;
+  max-height: 800px;
+  aspect-ratio: 9 / 16;
+}
+
+@media (max-width: 768px) {
+  .lightbox-dialog.landscape {
+    width: 95vw;
+    aspect-ratio: 16 / 9;
+  }
+  .lightbox-dialog.vertical {
+    height: 75vh;
+    aspect-ratio: 9 / 16;
+  }
+}
