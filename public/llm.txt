@@ -1,0 +1,53 @@
+# Rixon Sunny — AI Video Creator
+
+> Freelance AI Video Producer & Director based in Wayanad, Kerala, India. Creating cinematic commercial, brand, and digital advertising for Indian and international markets.
+
+## Summary
+Rixon Sunny produces high-end advertising and films using an AI-native production pipeline. Delivering striking visuals with the agility of AI, his work spans 15-second digital spots to 6-minute theatrical and broadcast productions.
+
+- **Role:** AI Video Creator, Director & Producer
+- **Location:** Wayanad, Kerala, India
+- **Market Reach:** India & International
+- **Formats Delivered:** 15-second social ads, product reels, 30-60s broadcast commercials, theatrical ads up to 6 minutes.
+- **Email:** rixon9370@gmail.com
+- **WhatsApp:** +91 95623 84588
+- **Website:** https://rixon-sunny.vercel.app
+
+## Core Services
+- **Cinematic Films:** Story-driven films with dramatic lighting, mood, and cinematic pacing generated with Kling and Seedance.
+- **Commercial Ads:** High-impact brand and product advertising produced with Kling and Gemini for conversion campaigns.
+- **Scriptwriting & Storyboarding:** Sharp narrative concepts, shot lists, and retention-optimized scripts developed with Claude and ChatGPT.
+- **AI Poster & Key Visual Design:** Campaign key art, promotional posters, and social visual identity created with Midjourney.
+- **Editing & Motion Graphics:** Precision pacing, color grading, motion graphics, sound synchronization, and final delivery.
+- **AI Music & Sound Design:** Custom original scores composed with Suno, alongside studio-quality voiceovers produced with ElevenLabs.
+
+## Creative Production Process (Workflow)
+1. **Brand Discovery:** Understanding brand identity, audience demographics, competitive space, and campaign objectives.
+2. **Brief & Strategy:** Establishing aesthetic direction, aspect ratios, target channels, and timelines.
+3. **Concept & Scriptwriting:** Narrative architecture, voiceover scripts, and storyboard visual prompts.
+4. **AI Generation:** Generating imagery via Midjourney & Gemini; video generation via Kling, Seedance, & Veo; audio production via ElevenLabs & Suno.
+5. **Edit & Delivery:** Editorial refinement, color grading, sound design, and platform-specific exports (16:9 landscape, 9:16 vertical/Reels/Shorts).
+
+## Tools & Technology Stack
+- **Directing & Scripting:** Claude, ChatGPT
+- **Visuals & Image Generation:** Midjourney, Gemini
+- **Video Motion Generation:** Kling, Seedance, Google Veo
+- **Audio & Voice Production:** ElevenLabs, Suno
+
+## Brands Worked With
+- LuLu Mall
+- Amana Toyota
+- Odyssia
+- Rajakumari Group
+- Nesto
+- Nahdi Mandi
+
+## Key Website Routes
+- `/` — Homepage: Hero showreel, categories overview, services, workflow, and about
+- `/cinematic` — Cinematic Films gallery
+- `/fashion-jewellery` — Luxury fashion & jewellery visual spots
+- `/commercial` — High-energy commercial ads
+- `/brand-films` — Brand identity and philosophy films
+- `/food-retail` — Food texture, supermarket, and consumer shopping promos
+- `/app-promos` — Digital product, UI motion, and walkthrough demos
+- `/contact` — Client inquiry and project booking form

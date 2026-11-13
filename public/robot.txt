@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+
+# LLM & AI Agents context
+# https://rixon-sunny.vercel.app/llms.txt
+# https://rixon-sunny.vercel.app/llm.txt
