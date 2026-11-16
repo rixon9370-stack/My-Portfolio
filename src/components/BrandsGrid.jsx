@@ -15,17 +15,18 @@ export default function BrandsGrid() {
       <span className="block font-body text-xs font-semibold uppercase tracking-[0.14em] text-white/60 mb-8">
         Brands I've created for
       </span>
-      <div className="grid grid-cols-2 md:grid-cols-3 gap-3 sm:gap-4 max-w-4xl mx-auto">
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-5 sm:gap-6 max-w-4xl mx-auto px-4 sm:px-0">
         {BRANDS.map((b, idx) => (
           <div
             key={idx}
-            className="flex items-center justify-center p-6 sm:p-8 bg-[#111115] border border-white/10 rounded-lg hover:border-white/25 hover:bg-[#18181f] transition-all duration-300 group"
+            style={{ backgroundColor: 'rgba(255, 255, 255, 0.92)' }}
+            className="flex items-center justify-center h-24 sm:h-24 px-6 py-4 rounded-[12px] transition-all duration-200 hover:scale-[1.03] hover:!bg-white shadow-sm group"
           >
             <img
               src={b.logo}
               alt={b.name}
               loading="lazy"
-              className="max-h-12 w-auto object-contain filter grayscale opacity-75 group-hover:grayscale-0 group-hover:opacity-100 group-hover:scale-105 transition-all duration-300"
+              className="max-h-12 sm:max-h-14 max-w-[85%] w-auto h-auto object-contain block mx-auto transition-transform duration-200"
             />
           </div>
         ))}
