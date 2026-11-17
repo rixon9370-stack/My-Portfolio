@@ -5,40 +5,42 @@ const SERVICES = [
   {
     id: 1,
     title: 'Cinematic Films',
-    description: 'Story-driven films with striking visuals and cinematic motion, generated with Kling and Seedance.'
+    description: 'Films built around strong visuals and cinematic motion, generated with Kling and Seedance.'
   },
   {
     id: 2,
     title: 'Commercial Ads',
-    description: 'Scroll-stopping brand and product ads, produced with Kling and Gemini for high-impact campaigns.'
+    description: 'Brand and product ads made to capture attention, produced with Kling and Gemini for modern campaigns.'
   },
   {
     id: 3,
     title: 'Scriptwriting',
-    description: 'Sharp concepts, storyboards and high-retention scripts developed with ChatGPT and Claude.'
+    description: 'Concepts, storyboards, and scripts developed with ChatGPT and Claude to keep viewers engaged.'
   },
   {
     id: 4,
     title: 'AI Poster Design',
-    description: 'Eye-catching campaign posters and key visuals, generated with Midjourney for print and digital.'
+    description: 'Campaign posters and key visuals generated with Midjourney for digital and print formats.'
   },
   {
     id: 5,
     title: 'Editing & Motion Graphics',
-    description: 'Clean pacing, precision color grading, motion graphics and polished finishing for every frame.'
+    description: 'Pacing, color grading, and motion graphics polished to make every frame feel complete.'
   },
   {
     id: 6,
     title: 'AI Music & Sound',
-    description: 'Original soundtracks generated with Suno and studio-quality voiceovers produced with ElevenLabs.'
+    description: 'Original soundtracks generated with Suno and professional voiceovers produced with ElevenLabs.'
   },
 ];
 
 export default function ServicesSection() {
-  const [activeId, setActiveId] = useState(null);
+  const [openIds, setOpenIds] = useState([]);
 
   const toggleService = (id) => {
-    setActiveId((prev) => (prev === id ? null : id));
+    setOpenIds((prev) =>
+      prev.includes(id) ? prev.filter((item) => item !== id) : [...prev, id]
+    );
   };
 
   return (
@@ -57,7 +59,7 @@ export default function ServicesSection() {
         {/* 6 Grid Cards */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           {SERVICES.map((s) => {
-            const isOpen = activeId === s.id;
+            const isOpen = openIds.includes(s.id);
             return (
               <div
                 key={s.id}

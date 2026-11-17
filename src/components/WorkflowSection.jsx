@@ -4,7 +4,7 @@ const STEPS = [
   {
     num: '01',
     title: 'Brand Discovery',
-    desc: 'Every project begins with the brand itself — its goals, audience, competitors, and tone — before a single frame is made.'
+    desc: 'Every project begins with the brand itself, its goals, audience, competitors, and tone, before a single frame is made.'
   },
   {
     num: '02',
@@ -19,12 +19,17 @@ const STEPS = [
   {
     num: '04',
     title: 'AI Generation',
-    desc: 'Prompting and direction are handled with Claude and ChatGPT; images are generated with Midjourney and Gemini; video is produced with Kling, Seedance, and Veo; audio and music are created with ElevenLabs and Suno.'
+    desc: 'Prompting and direction come from Claude and ChatGPT. Images are generated with Midjourney and Gemini, video with Kling, Seedance, and Veo, and audio and music with ElevenLabs and Suno.'
   },
   {
     num: '05',
-    title: 'Edit & Delivery',
-    desc: 'Pacing, color grading, sound design, and export formats are finalized and optimized for the intended platform.'
+    title: 'Edit',
+    desc: 'Pacing, color grading, and sound design are shaped to match the tone of the brand.'
+  },
+  {
+    num: '06',
+    title: 'Review & Delivery',
+    desc: 'The cut is reviewed and revised, then final files are exported and optimized for the intended platform.'
   }
 ];
 
@@ -43,25 +48,42 @@ const TOOLS = [
 export default function WorkflowSection() {
   return (
     <section id="workflow" className="w-full pt-28 md:pt-36">
-      <div className="max-w-4xl mx-auto px-4 sm:px-6">
-        {/* Header */}
+      <div className="max-w-5xl mx-auto px-4 sm:px-6">
+        {/* Header - Solid crisp text without color fringe */}
         <div className="text-center mb-16">
-          <h2 className="font-display text-4xl sm:text-5xl font-bold uppercase tracking-tight text-white mb-4">
+          <h2
+            style={{
+              textShadow: 'none',
+              filter: 'none',
+              mixBlendMode: 'normal',
+              WebkitFontSmoothing: 'antialiased',
+              MozOsxFontSmoothing: 'grayscale'
+            }}
+            className="font-display text-4xl sm:text-5xl font-bold uppercase tracking-tight text-white mb-4"
+          >
             Workflow
           </h2>
-          <p className="font-body text-base sm:text-lg text-white/70 max-w-2xl mx-auto">
-            Every project begins with the brand itself — its goals, audience, competitors, and tone — before a single frame is made.
+          <p
+            style={{
+              color: 'rgba(255, 255, 255, 0.75)',
+              textShadow: 'none',
+              filter: 'none',
+              mixBlendMode: 'normal',
+              WebkitFontSmoothing: 'antialiased',
+              MozOsxFontSmoothing: 'grayscale'
+            }}
+            className="font-body text-base sm:text-lg max-w-2xl mx-auto"
+          >
+            Every project begins with the brand itself, its goals, audience, competitors, and tone, before a single frame is made.
           </p>
         </div>
 
-        {/* 5 Steps Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-20">
+        {/* 6 Steps Grid - Clean 3-column, 2-row grid with equal heights and no empty gaps */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 items-stretch gap-6 mb-20">
           {STEPS.map((s, idx) => (
             <div
               key={idx}
-              className={`p-6 sm:p-8 bg-[#111115] border border-white/10 rounded-lg flex flex-col justify-start hover:border-white/20 transition-colors ${
-                idx === 3 || idx === 4 ? 'md:col-span-1 lg:col-span-1' : ''
-              }`}
+              className="p-6 sm:p-8 bg-[#111115] border border-white/10 rounded-lg flex flex-col justify-start hover:border-white/20 transition-colors h-full"
             >
               <span className="font-display text-2xl font-bold text-white/40 mb-3">
                 {s.num}
@@ -69,7 +91,10 @@ export default function WorkflowSection() {
               <h3 className="font-display text-2xl font-bold uppercase tracking-tight text-white mb-3">
                 {s.title}
               </h3>
-              <p className="font-body text-sm text-white/75 leading-relaxed">
+              <p
+                style={{ color: 'rgba(255, 255, 255, 0.78)' }}
+                className="font-body text-sm leading-relaxed"
+              >
                 {s.desc}
               </p>
             </div>

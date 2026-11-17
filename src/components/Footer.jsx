@@ -32,22 +32,6 @@ export default function Footer() {
           >
             EMAIL
           </a>
-          <a
-            href="https://www.linkedin.com/in/rixon-sunny-999330397"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="hover:opacity-70 transition-opacity"
-          >
-            LINKEDIN
-          </a>
-          <a
-            href="https://www.youtube.com/@Rixonsunny"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="hover:opacity-70 transition-opacity"
-          >
-            YOUTUBE
-          </a>
         </div>
 
         {/* Column 4: Back to Top */}
@@ -78,22 +62,6 @@ export default function Footer() {
           className="hover:opacity-70 transition-opacity"
         >
           EMAIL
-        </a>
-        <a
-          href="https://www.linkedin.com/in/rixon-sunny-999330397"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="hover:opacity-70 transition-opacity"
-        >
-          LINKEDIN
-        </a>
-        <a
-          href="https://www.youtube.com/@Rixonsunny"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="hover:opacity-70 transition-opacity"
-        >
-          YOUTUBE
         </a>
       </div>
     </footer>

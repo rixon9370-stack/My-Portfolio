@@ -39,13 +39,10 @@ export default function AboutSection() {
           <p>
             I have delivered projects for brands in fashion, jewellery, food, retail, travel and technology.
           </p>
-          <p>
-            I also manage Meta and Google advertising campaigns, so the finished video reaches the right audience.
-          </p>
         </div>
 
-        {/* 5. Details row (Location / Markets / Format range) */}
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 sm:gap-8 w-full max-w-2xl py-8 border-y border-white/10 mb-12">
+        {/* 5. Details row (Location / Markets / Format range / Experience) */}
+        <div className="grid grid-cols-2 sm:grid-cols-4 gap-6 sm:gap-8 w-full max-w-3xl py-8 border-y border-white/10 mb-12">
           <div className="flex flex-col items-center">
             <span className="font-body text-xs font-semibold uppercase tracking-wider text-white/50 mb-1">
               Location
@@ -68,6 +65,14 @@ export default function AboutSection() {
             </span>
             <span className="font-body text-sm sm:text-base font-medium text-white">
               15 sec – 6 min
+            </span>
+          </div>
+          <div className="flex flex-col items-center">
+            <span className="font-body text-xs font-semibold uppercase tracking-wider text-white/50 mb-1">
+              Experience
+            </span>
+            <span className="font-body text-sm sm:text-base font-medium text-white">
+              1 Year
             </span>
           </div>
         </div>
