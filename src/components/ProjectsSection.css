@@ -108,6 +108,14 @@
   transform: translate(-50%, calc(-50% + var(--title-offset, 0px)));
 }
 
+/* Last panel right before the ABOUT section:
+   While the panel's bottom edge rises above the bottom of the viewport,
+   shift the title up together with the panel so it stays safely inside
+   the visible area and exits off the top of the viewport with the panel. */
+.panel--last .project-panel-text {
+  transform: translate(-50%, calc(-50% + var(--title-shift, 0px)));
+}
+
 /* Re-enable pointer events on interactive children */
 .project-panel-text a {
   pointer-events: auto;

@@ -23,7 +23,7 @@ import './ProjectsSection.css';
   reference video.
 */
 
-function Panel({ panel, zIndex, isFirst = false }) {
+function Panel({ panel, zIndex, isFirst = false, isLast = false }) {
   const videoRef  = useRef(null);
   const sectionRef = useRef(null);
   const count = WORKS.filter((w) => w.category === panel.slug).length;
@@ -63,6 +63,42 @@ function Panel({ panel, zIndex, isFirst = false }) {
     };
   }, [isFirst]);
 
+  /* Last panel only (APP PROMOS, right before ABOUT / footer):
+     While the panel's bottom edge rises above the bottom of the viewport,
+     shift the title up together with the panel so it stays safely inside
+     the visible area and exits off the top of the viewport with the panel. */
+  useEffect(() => {
+    if (!isLast || !sectionRef.current) return;
+    const el = sectionRef.current;
+    let rAFId = null;
+
+    const updateShift = () => {
+      if (!el) return;
+      const rect = el.getBoundingClientRect();
+      const shift = Math.min(0, rect.bottom - window.innerHeight);
+      el.style.setProperty('--title-shift', `${shift}px`);
+      rAFId = null;
+    };
+
+    const onScroll = () => {
+      if (rAFId === null) {
+        rAFId = window.requestAnimationFrame(updateShift);
+      }
+    };
+
+    updateShift();
+    window.addEventListener('scroll', onScroll, { passive: true });
+    window.addEventListener('resize', onScroll, { passive: true });
+
+    return () => {
+      if (rAFId !== null) {
+        window.cancelAnimationFrame(rAFId);
+      }
+      window.removeEventListener('scroll', onScroll);
+      window.removeEventListener('resize', onScroll);
+    };
+  }, [isLast]);
+
   /* Play/pause video only when panel is sufficiently visible */
   useEffect(() => {
     if (!panel.hasVideo || !videoRef.current) return;
@@ -90,7 +126,7 @@ function Panel({ panel, zIndex, isFirst = false }) {
     <section
       ref={sectionRef}
       id={panel.slug}
-      className={`project-panel ${isFirst ? 'panel--after-strip' : ''}`}
+      className={`project-panel ${isFirst ? 'panel--after-strip' : ''} ${isLast ? 'panel--last' : ''}`}
       style={{ zIndex }}
       aria-label={`${panel.title}, ${count} ${count === 1 ? 'film' : 'films'}`}
     >
@@ -150,6 +186,7 @@ export default function ProjectsSection() {
           panel={panel}
           zIndex={index + 1}
           isFirst={index === 0}
+          isLast={index === PANELS.length - 1}
         />
       ))}
     </div>
