@@ -23,10 +23,45 @@ import './ProjectsSection.css';
   reference video.
 */
 
-function Panel({ panel, zIndex }) {
+function Panel({ panel, zIndex, isFirst = false }) {
   const videoRef  = useRef(null);
   const sectionRef = useRef(null);
   const count = WORKS.filter((w) => w.category === panel.slug).length;
+
+  /* First panel only (right after ticker strip):
+     Offset the title while panel is scrolling up so it stays centered
+     in the panel and lands at viewport center when panel reaches top: 0. */
+  useEffect(() => {
+    if (!isFirst || !sectionRef.current) return;
+    const el = sectionRef.current;
+    let rAFId = null;
+
+    const updateOffset = () => {
+      if (!el) return;
+      const rect = el.getBoundingClientRect();
+      const offset = Math.max(0, rect.top);
+      el.style.setProperty('--title-offset', `${offset}px`);
+      rAFId = null;
+    };
+
+    const onScroll = () => {
+      if (rAFId === null) {
+        rAFId = window.requestAnimationFrame(updateOffset);
+      }
+    };
+
+    updateOffset();
+    window.addEventListener('scroll', onScroll, { passive: true });
+    window.addEventListener('resize', onScroll, { passive: true });
+
+    return () => {
+      if (rAFId !== null) {
+        window.cancelAnimationFrame(rAFId);
+      }
+      window.removeEventListener('scroll', onScroll);
+      window.removeEventListener('resize', onScroll);
+    };
+  }, [isFirst]);
 
   /* Play/pause video only when panel is sufficiently visible */
   useEffect(() => {
@@ -55,7 +90,7 @@ function Panel({ panel, zIndex }) {
     <section
       ref={sectionRef}
       id={panel.slug}
-      className="project-panel"
+      className={`project-panel ${isFirst ? 'panel--after-strip' : ''}`}
       style={{ zIndex }}
       aria-label={`${panel.title}, ${count} ${count === 1 ? 'film' : 'films'}`}
     >
@@ -110,7 +145,12 @@ export default function ProjectsSection() {
   return (
     <div id="projects" className="projects-stack">
       {PANELS.map((panel, index) => (
-        <Panel key={panel.slug} panel={panel} zIndex={index + 1} />
+        <Panel
+          key={panel.slug}
+          panel={panel}
+          zIndex={index + 1}
+          isFirst={index === 0}
+        />
       ))}
     </div>
   );

@@ -100,6 +100,14 @@
   max-width: min(90vw, 800px);
 }
 
+/* First panel right after the ticker strip:
+   While the panel's top is below the top of the viewport, offset the title
+   so it stays at the center of the panel (rising from the bottom with the panel)
+   and lands at the viewport center when the panel reaches top: 0. */
+.panel--after-strip .project-panel-text {
+  transform: translate(-50%, calc(-50% + var(--title-offset, 0px)));
+}
+
 /* Re-enable pointer events on interactive children */
 .project-panel-text a {
   pointer-events: auto;
