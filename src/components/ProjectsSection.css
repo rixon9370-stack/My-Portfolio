@@ -1,0 +1,157 @@
+/* ============================================================
+   STICKY-STACKING SCROLL — Curtain / Pinned-Title Reveal
+   Matches Amber reference: https://amber.framer.media/projects
+   ============================================================
+
+   HOW IT WORKS:
+   - Each .project-panel is position:sticky so it pins at top:0
+     while the page scrolls. Higher z-index panels slide up and
+     cover lower ones.
+   - clip-path:inset(0) on the panel clips ALL descendants —
+     including position:fixed children — to the panel's own box.
+   - .project-panel-text is position:fixed at 50vh (viewport centre)
+     so it never moves, but is only visible inside its own panel's
+     clip region.
+   - When the NEXT panel's top edge crosses 50vh, its clip starts
+     including the centre point → its title becomes visible at exactly
+     that moment. This is the curtain / title-swap behaviour.
+   - NO ancestor may have transform, filter, perspective, or
+     will-change:transform — that would make position:fixed relative
+     to that ancestor instead of the viewport. The ancestor chain
+     (html → body → #root → WorkPage div → .projects-stack) is clean.
+   ============================================================ */
+
+/* ---- Wrapper ---- */
+.projects-stack {
+  position: relative;
+}
+
+/* ---- Each sticky full-viewport panel ---- */
+.project-panel {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  width: 100%;
+  overflow: hidden;        /* clips the video/image to panel bounds  */
+  clip-path: inset(0);    /* clips position:fixed children too — KEY */
+  background: #0a0a0c;
+}
+
+/* ---- Full-bleed background video / image ---- */
+.project-panel-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  pointer-events: none;
+  transform: scale(1);
+  transition: transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.project-panel:hover .project-panel-video {
+  transform: scale(1.04);
+}
+
+/* ---- Dark overlay ---- */
+.project-panel-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.35);
+  pointer-events: none;
+  transition: background 0.5s ease;
+}
+
+.project-panel:hover .project-panel-overlay {
+  background: rgba(0, 0, 0, 0.20);
+}
+
+/* ---- Gradient fallback (no video or poster) ---- */
+.project-panel-gradient-fallback {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, #111115 0%, #0a0a0c 50%, #18181f 100%);
+}
+
+/* ---- PINNED TITLE — stays at viewport centre, clipped to panel ----
+   position:fixed keeps it at exact viewport centre.
+   clip-path:inset(0) on the parent panel clips it so it only shows
+   inside that panel's visible rectangle.                            */
+.project-panel-text {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 10;
+  text-align: center;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0 24px;
+  /* Prevent mouse events from landing here when panel is not active */
+  pointer-events: none;
+  width: max-content;
+  max-width: min(90vw, 800px);
+}
+
+/* Re-enable pointer events on interactive children */
+.project-panel-text a {
+  pointer-events: auto;
+}
+
+/* ---- Title ---- */
+.project-panel-text h2 {
+  font-family: 'Antonio', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: clamp(2.8rem, 5.5vw, 6.5rem);
+  font-weight: 700;
+  line-height: 1;
+  text-transform: uppercase;
+  color: #ffffff;
+  letter-spacing: -0.015em;
+  margin: 0 0 12px 0;
+  text-shadow: 0 2px 32px rgba(0, 0, 0, 0.6);
+}
+
+/* ---- Subtitle (film count) ---- */
+.project-panel-text p {
+  font-family: 'Plus Jakarta Sans', -apple-system, sans-serif;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.85);
+  margin: 0 0 32px 0;
+  letter-spacing: 0.05em;
+}
+
+/* ---- VIEW button ---- */
+.project-panel-view-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-family: 'Plus Jakarta Sans', -apple-system, sans-serif;
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: #fff;
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  padding-bottom: 2px;
+  transition: border-color 0.3s ease;
+}
+
+.project-panel-view-btn:hover {
+  border-bottom-color: #fff;
+}
+
+/* ---- Mobile tweaks ---- */
+@media (max-width: 640px) {
+  .project-panel-text h2 {
+    font-size: clamp(2.2rem, 10vw, 3.5rem);
+  }
+}

@@ -100,9 +100,13 @@ body {
   font-family: var(--font-body);
   min-height: 100vh;
   position: relative;
-  overflow-x: hidden;
   letter-spacing: -0.01em;
 }
+
+/* --------------------------------------------------------------------------
+   STICKY STACKING / CURTAIN REVEAL  (Amber reference)
+   Full CSS is in ProjectsSection.css — this stub is kept only for ordering.
+   -------------------------------------------------------------------------- */
 
 /* Custom font utilities for direct fallback */
 .font-display {

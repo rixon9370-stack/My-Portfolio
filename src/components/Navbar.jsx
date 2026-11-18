@@ -49,27 +49,16 @@ export default function Navbar() {
             </Link>
           </div>
 
-          {/* Column 2: WORK / PROJECTS (Desktop) */}
+          {/* Column 2: WORK (Desktop) */}
           <div className="site-col-2 hidden md:flex">
-            {isHome ? (
-              <a
-                href="#projects"
-                onClick={(e) => {
-                  e.preventDefault();
-                  handleNavClick('projects');
-                }}
-                className="font-body text-[13px] font-semibold uppercase tracking-wider text-white hover:opacity-70 transition-opacity"
-              >
-                WORK
-              </a>
-            ) : (
-              <Link
-                to="/#projects"
-                className="font-body text-[13px] font-semibold uppercase tracking-wider text-white hover:opacity-70 transition-opacity"
-              >
-                PROJECTS
-              </Link>
-            )}
+            <Link
+              to="/work"
+              className={`font-body text-[13px] font-semibold uppercase tracking-wider text-white hover:opacity-70 transition-opacity ${
+                location.pathname === '/work' ? 'opacity-100 underline underline-offset-4' : ''
+              }`}
+            >
+              WORK
+            </Link>
           </div>
 
           {/* Column 3: ABOUT (Desktop) */}
@@ -153,16 +142,13 @@ export default function Navbar() {
           </Link>
           {isHome ? (
             <>
-              <a
-                href="#projects"
+              <Link
+                to="/work"
                 className="font-display text-4xl sm:text-5xl uppercase tracking-wider text-white hover:opacity-70 transition-opacity"
-                onClick={(e) => {
-                  e.preventDefault();
-                  handleNavClick('projects');
-                }}
+                onClick={() => setMobileMenuOpen(false)}
               >
                 WORK
-              </a>
+              </Link>
               <a
                 href="#about"
                 className="font-display text-4xl sm:text-5xl uppercase tracking-wider text-white hover:opacity-70 transition-opacity"
@@ -177,11 +163,11 @@ export default function Navbar() {
           ) : (
             <>
               <Link
-                to="/#projects"
+                to="/work"
                 className="font-display text-4xl sm:text-5xl uppercase tracking-wider text-white hover:opacity-70 transition-opacity"
                 onClick={() => setMobileMenuOpen(false)}
               >
-                PROJECTS
+                WORK
               </Link>
               <Link
                 to="/#about"

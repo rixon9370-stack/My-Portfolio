@@ -1,6 +1,7 @@
 import React from 'react';
 import { Routes, Route, Navigate } from 'react-router-dom';
 import HomePage from './pages/HomePage';
+import WorkPage from './pages/WorkPage';
 import CategoryPage from './pages/CategoryPage';
 import ContactPage from './pages/ContactPage';
 import { ScrollToTop } from './components/ScrollToTop';
@@ -13,6 +14,11 @@ export default function App() {
         {/* Core Root */}
         <Route path="/" element={<HomePage />} />
         <Route path="/index.html" element={<Navigate to="/" replace />} />
+
+        {/* Work Page — single scrollable stacking view */}
+        <Route path="/work" element={<WorkPage />} />
+        <Route path="/pages/work.html" element={<Navigate to="/work" replace />} />
+        <Route path="/pages/work" element={<Navigate to="/work" replace />} />
 
         {/* Contact Page */}
         <Route path="/contact" element={<ContactPage />} />
@@ -27,11 +33,6 @@ export default function App() {
 
         {/* Dynamic Category Route */}
         <Route path="/category/:categorySlug" element={<CategoryPage />} />
-
-        {/* Work Redirection */}
-        <Route path="/work" element={<Navigate to="/#projects" replace />} />
-        <Route path="/pages/work.html" element={<Navigate to="/#projects" replace />} />
-        <Route path="/pages/work" element={<Navigate to="/#projects" replace />} />
 
         {/* Legacy /pages/ redirects for zero broken links */}
         <Route path="/pages/contact.html" element={<Navigate to="/contact" replace />} />

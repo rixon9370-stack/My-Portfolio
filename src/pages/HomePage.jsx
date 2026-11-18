@@ -17,6 +17,7 @@ export default function HomePage() {
         <Hero />
         <Ticker />
         <ProjectsSection />
+        {/* Content below sticky panels must sit above them with higher z-index */}
         <div className="bg-[#0a0a0c] relative z-20 px-4 sm:px-6 md:px-8">
           <AboutSection />
           <ServicesSection />
@@ -24,7 +25,9 @@ export default function HomePage() {
           <CtaSection />
         </div>
       </main>
-      <Footer />
+      <div className="relative z-20">
+        <Footer />
+      </div>
     </div>
   );
 }
