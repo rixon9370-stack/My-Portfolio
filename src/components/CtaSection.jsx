@@ -6,7 +6,7 @@ export default function CtaSection() {
   let charCounter = 0;
 
   return (
-    <section className="w-full pt-32 pb-24 flex items-center justify-center text-center">
+    <section className="w-full pt-20 pb-16 md:pt-32 md:pb-24 flex items-center justify-center text-center px-4">
       <Link
         to="/contact"
         className="cta-rolling-btn group"

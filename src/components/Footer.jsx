@@ -9,15 +9,16 @@ export default function Footer() {
   };
 
   return (
-    <footer className="w-full border-t border-white/10 py-8">
-      <div className="site-aligned-row font-body text-xs sm:text-sm font-semibold tracking-wider text-white">
+    <footer className="w-full border-t border-white/10">
+      {/* Desktop Footer Row (>= 768px) */}
+      <div className="footer-desktop site-aligned-row font-body text-xs sm:text-sm font-semibold tracking-wider text-white py-8">
         {/* Column 1: Copyright */}
         <div className="site-col-1 text-white/60">
           <span>&copy; {currentYear} Rixon Sunny</span>
         </div>
 
         {/* Column 2 & 3: Social Links */}
-        <div className="hidden md:flex flex-2 justify-center items-center gap-6 sm:gap-8">
+        <div className="flex-2 flex justify-center items-center gap-6 sm:gap-8">
           <a
             href="https://wa.me/919562384588"
             target="_blank"
@@ -47,22 +48,42 @@ export default function Footer() {
         </div>
       </div>
 
-      {/* Mobile Social Links Row */}
-      <div className="flex md:hidden flex-wrap justify-center items-center gap-6 mt-6 px-4 font-body text-xs font-semibold tracking-wider text-white">
-        <a
-          href="https://wa.me/919562384588"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="hover:opacity-70 transition-opacity"
-        >
-          WHATSAPP
-        </a>
-        <a
-          href="mailto:rixon9370@gmail.com"
-          className="hover:opacity-70 transition-opacity"
-        >
-          EMAIL
-        </a>
+      {/* Mobile Footer Column (< 768px, matching Amber reference) */}
+      <div className="footer-mobile font-body text-center">
+        {/* Links row */}
+        <div className="flex items-center justify-center gap-8 text-xs font-semibold tracking-wider text-white">
+          <a
+            href="https://wa.me/919562384588"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hover:opacity-70 transition-opacity"
+          >
+            WHATSAPP
+          </a>
+          <a
+            href="mailto:rixon9370@gmail.com"
+            className="hover:opacity-70 transition-opacity"
+          >
+            EMAIL
+          </a>
+        </div>
+
+        {/* Back to top centered on its own line */}
+        <div>
+          <button
+            type="button"
+            onClick={scrollToTop}
+            className="inline-flex items-center gap-1.5 text-xs font-semibold tracking-wider text-white hover:opacity-70 transition-opacity uppercase cursor-pointer"
+          >
+            <span>BACK TO TOP</span>
+            <ArrowUp className="w-3.5 h-3.5" />
+          </button>
+        </div>
+
+        {/* Copyright centered at very bottom in smaller muted text */}
+        <div className="text-[11px] font-medium tracking-wider text-white/50">
+          <span>&copy; {currentYear} Rixon Sunny</span>
+        </div>
       </div>
     </footer>
   );

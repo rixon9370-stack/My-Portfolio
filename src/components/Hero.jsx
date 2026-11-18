@@ -69,10 +69,10 @@ export default function Hero() {
       {/* Centered Massive Headline */}
       <div
         ref={headlineRef}
-        className="relative z-30 w-full px-6 sm:px-8 flex items-center justify-center text-center opacity-0 pointer-events-none select-none"
+        className="relative z-30 w-full px-4 sm:px-8 flex items-center justify-center text-center opacity-0 pointer-events-none select-none"
       >
-        <h1 className="font-display text-[clamp(4.2rem,14vw,14.5rem)] font-bold leading-[0.92] uppercase text-white tracking-[-0.015em] text-center">
-          RIXON<span className="inline md:hidden"><br /></span> <span className="hidden md:inline"> </span>SUNNY
+        <h1 className="hero-headline text-center">
+          RIXON SUNNY
         </h1>
       </div>
 
@@ -82,7 +82,7 @@ export default function Hero() {
         className="absolute bottom-6 left-0 right-0 z-30 w-full pointer-events-none opacity-0"
       >
         {/* Desktop 4-Column Row (Matches Top Navbar columns 1:1) */}
-        <div className="hidden md:flex site-aligned-row font-body text-xs sm:text-sm md:text-[15px] font-medium text-white tracking-[-0.005em]">
+        <div className="hero-bottom-desktop site-aligned-row font-body text-xs sm:text-sm md:text-[15px] font-medium text-white tracking-[-0.005em]">
           {/* Column 1: Aligns directly under Logo */}
           <div className="site-col-1">
             <span className="whitespace-nowrap">AI films and ads for brands</span>
@@ -108,16 +108,12 @@ export default function Hero() {
           </div>
         </div>
 
-        {/* Mobile 2x2 Grid */}
-        <div className="flex md:hidden px-5 justify-between items-center text-xs font-medium text-white gap-2">
-          <div className="flex flex-col gap-1 text-left">
-            <span>AI films and ads for brands</span>
-            <span className="text-white/70">Wayanad, Kerala</span>
-          </div>
-          <div className="flex flex-col gap-1 text-right">
-            <span className="font-mono tabular-nums">{clock}</span>
-            <span className="text-white/70">&copy; {currentYear} Rixon Sunny</span>
-          </div>
+        {/* Mobile Centered Stack (Rendered ONLY on mobile, matching Amber reference) */}
+        <div className="hero-bottom-mobile font-body text-xs font-medium">
+          <span>AI films and ads for brands</span>
+          <span className="text-white/70">Wayanad, Kerala</span>
+          <span className="text-white/60">&copy; {currentYear} Rixon Sunny</span>
+          <span className="font-mono tabular-nums text-white/90 tracking-wider">{clock}</span>
         </div>
       </div>
     </section>

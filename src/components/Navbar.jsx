@@ -49,8 +49,8 @@ export default function Navbar() {
             </Link>
           </div>
 
-          {/* Column 2: WORK (Desktop) */}
-          <div className="site-col-2 hidden md:flex">
+          {/* Column 2: WORK (Desktop only) */}
+          <div className="site-col-2 desktop-only-col">
             <Link
               to="/work"
               className={`font-body text-[13px] font-semibold uppercase tracking-wider text-white hover:opacity-70 transition-opacity ${
@@ -61,8 +61,8 @@ export default function Navbar() {
             </Link>
           </div>
 
-          {/* Column 3: ABOUT (Desktop) */}
-          <div className="site-col-3 hidden md:flex">
+          {/* Column 3: ABOUT (Desktop only) */}
+          <div className="site-col-3 desktop-only-col">
             {isHome ? (
               <a
                 href="#about"
@@ -87,7 +87,7 @@ export default function Navbar() {
           {/* Column 4: CONTACT / MENU */}
           <div className="site-col-4">
             {/* Desktop Contact Link */}
-            <div className="hidden md:block">
+            <div className="desktop-contact-link">
               <Link
                 to="/contact"
                 className={`font-body text-[13px] font-semibold uppercase tracking-wider text-white hover:opacity-70 transition-opacity ${
@@ -101,7 +101,7 @@ export default function Navbar() {
             {/* Mobile Hamburger Button */}
             <button
               type="button"
-              className="md:hidden flex items-center gap-2 text-white font-body text-xs font-semibold uppercase tracking-widest p-1 hover:opacity-80 transition-opacity cursor-pointer"
+              className="mobile-menu-btn items-center gap-2 text-white font-body text-xs font-semibold uppercase tracking-widest p-1 hover:opacity-80 transition-opacity cursor-pointer"
               onClick={() => setMobileMenuOpen(true)}
               aria-label="Toggle navigation menu"
               aria-expanded={mobileMenuOpen}

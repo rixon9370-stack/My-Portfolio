@@ -29,7 +29,7 @@ export default function AboutSection() {
         </p>
 
         {/* 4. Bio Paragraphs */}
-        <div className="flex flex-col gap-5 max-w-2xl text-base sm:text-lg font-normal text-white/80 leading-relaxed mb-14 text-center">
+        <div className="flex flex-col gap-5 max-w-2xl text-base sm:text-lg font-normal text-white/80 leading-relaxed mb-14 text-left sm:text-center">
           <p>
             I'm Rixon Sunny, a freelance AI video producer based in Wayanad, Kerala. I create advertising for brands in India and international markets, delivering high-quality visuals with the speed and flexibility of AI production.
           </p>
