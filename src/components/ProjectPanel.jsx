@@ -81,7 +81,7 @@ export default function ProjectPanel({ panel, zIndex = 1 }) {
 
       {/* Centered Panel Content */}
       <div className="relative z-10 flex flex-col items-center text-center px-6 sm:px-8">
-        <h2 className="font-display text-[clamp(2.8rem,5.5vw,6.5rem)] font-bold leading-none uppercase text-white tracking-tight mb-3 drop-shadow-lg">
+        <h2 className="font-display text-[clamp(26px,4.5vw,68px)] font-bold leading-none uppercase text-white tracking-tight mb-3 drop-shadow-lg whitespace-nowrap">
           {panel.title}
         </h2>
         <p className="font-body text-sm sm:text-base font-medium text-white/85 mb-8 tracking-wide">
