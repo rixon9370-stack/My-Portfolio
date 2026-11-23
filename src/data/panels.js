@@ -34,17 +34,17 @@ export const PANELS = [
   {
     slug: "food-retail",
     title: "RETAIL & SHOPPING",
-    video: "",
+    video: "/assets/videos/retail-shopping.mp4",
     poster: "/assets/posters/food-retail.webp",
     href: "/food-retail",
-    hasVideo: false,
+    hasVideo: true,
   },
   {
     slug: "app-promos",
     title: "APP PROMOS",
-    video: "",
+    video: "/assets/videos/app-promos.mp4",
     poster: "/assets/posters/app-promos.webp",
     href: "/app-promos",
-    hasVideo: false,
+    hasVideo: true,
   },
 ];
