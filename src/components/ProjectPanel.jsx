@@ -54,10 +54,11 @@ export default function ProjectPanel({ panel, zIndex = 1 }) {
           <video
             ref={videoRef}
             className="w-full h-full object-cover object-center transform group-hover:scale-105 transition-transform duration-700 ease-out"
+            autoPlay
             muted
             loop
             playsInline
-            preload="metadata"
+            preload="auto"
             poster={panel.poster}
             aria-hidden="true"
           >

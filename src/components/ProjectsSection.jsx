@@ -137,10 +137,11 @@ function Panel({ panel, zIndex, isFirst = false, isLast = false }) {
           className="project-panel-video"
           src={panel.video}
           poster={panel.poster}
+          autoPlay
           muted
           loop
           playsInline
-          preload="metadata"
+          preload="auto"
           aria-hidden="true"
         />
       ) : panel.poster ? (
