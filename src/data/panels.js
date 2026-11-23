@@ -35,7 +35,7 @@ export const PANELS = [
     slug: "food-retail",
     title: "RETAIL & SHOPPING",
     video: "/assets/videos/retail-shopping.mp4",
-    poster: "/assets/posters/food-retail.webp",
+    poster: "/assets/posters/retail-shopping.webp",
     href: "/food-retail",
     hasVideo: true,
   },
