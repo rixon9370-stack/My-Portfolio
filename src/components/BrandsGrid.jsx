@@ -1,12 +1,12 @@
 import React from 'react';
 
 const BRANDS = [
-  { name: 'LuLu Mall', logo: '/assets/brands/lulu-mall.png', hasColor: true },
-  { name: 'Amana Toyota', logo: '/assets/brands/amana-toyota.png', hasColor: false },
-  { name: 'Odyssia', logo: '/assets/brands/odyssia.png', hasColor: false },
-  { name: 'Rajakumari Group', logo: '/assets/brands/rajakumari-group.png', hasColor: true },
-  { name: 'Nesto', logo: '/assets/brands/nesto.png', hasColor: true },
-  { name: 'Nahdi Mandi', logo: '/assets/brands/nahdi-mandi.png', hasColor: false },
+  { name: 'LuLu Mall', logo: '/assets/brands/lulu-mall.png' },
+  { name: 'Amana Toyota', logo: '/assets/brands/amana-toyota.png' },
+  { name: 'Odyssia', logo: '/assets/brands/odyssia.png' },
+  { name: 'Rajakumari Group', logo: '/assets/brands/rajakumari-group.png' },
+  { name: 'Nesto', logo: '/assets/brands/nesto.png' },
+  { name: 'Nahdi Mandi', logo: '/assets/brands/nahdi-mandi.png' },
 ];
 
 export default function BrandsGrid() {
@@ -16,21 +16,20 @@ export default function BrandsGrid() {
         Brands I've created for
       </span>
 
-      {/* Static evenly spaced strip with hairline rules above and below only */}
+      {/* Static evenly spaced row with hairline rules above and below */}
       <div className="w-full border-y border-white/15 py-8 sm:py-10 select-none">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-x-6 gap-y-8 items-center justify-items-center">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4 sm:gap-5 items-center justify-items-center">
           {BRANDS.map((b) => (
             <div
               key={b.name}
-              className="brand-logo-item flex items-center justify-center w-full"
+              style={{ backgroundColor: 'rgba(255, 255, 255, 0.92)' }}
+              className="flex items-center justify-center w-full max-w-[148px] sm:max-w-[156px] h-[66px] sm:h-[72px] px-2.5 py-1.5 rounded-[10px] transition-all duration-200 hover:scale-[1.03] hover:!bg-white shadow-sm"
             >
               <img
                 src={b.logo}
                 alt={b.name}
                 loading="lazy"
-                className={`brand-logo-img ${
-                  b.hasColor ? 'brand-logo-img--color' : 'brand-logo-img--mono'
-                } h-14 sm:h-16 lg:h-[72px] w-auto max-w-[150px] object-contain block mx-auto select-none`}
+                className="max-h-[58px] sm:max-h-[64px] max-w-[94%] w-auto h-auto object-contain block mx-auto select-none"
               />
             </div>
           ))}

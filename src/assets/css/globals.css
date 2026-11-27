@@ -272,24 +272,6 @@ body {
   animation-play-state: paused;
 }
 
-.brand-logo-img {
-  filter: brightness(0) invert(1);
-  opacity: 0.52;
-  transition: filter 0.35s ease, opacity 0.35s ease, transform 0.35s ease;
-}
-
-.brand-logo-item:hover .brand-logo-img--mono {
-  filter: brightness(0) invert(1);
-  opacity: 1;
-  transform: scale(1.04);
-}
-
-.brand-logo-item:hover .brand-logo-img--color {
-  filter: invert(1) hue-rotate(180deg) saturate(1.5) brightness(1.15);
-  opacity: 1;
-  transform: scale(1.04);
-}
-
 /* --------------------------------------------------------------------------
    4. PERSISTENT ROLLING CHARACTERS ANIMATION (CTA)
    -------------------------------------------------------------------------- */
