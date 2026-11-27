@@ -1,36 +1,53 @@
 import React from 'react';
 
 const BRANDS = [
-  { name: 'LuLu Mall', logo: '/assets/brands/lulu-mall.png' },
-  { name: 'Amana Toyota', logo: '/assets/brands/amana-toyota.png' },
-  { name: 'Odyssia', logo: '/assets/brands/odyssia.png' },
-  { name: 'Rajakumari Group', logo: '/assets/brands/rajakumari-group.png' },
-  { name: 'Nesto', logo: '/assets/brands/nesto.png' },
-  { name: 'Nahdi Mandi', logo: '/assets/brands/nahdi-mandi.png' },
+  { name: 'LuLu Mall', logo: '/assets/brands/lulu-mall.png', hasColor: true },
+  { name: 'Amana Toyota', logo: '/assets/brands/amana-toyota.png', hasColor: false },
+  { name: 'Odyssia', logo: '/assets/brands/odyssia.png', hasColor: false },
+  { name: 'Rajakumari Group', logo: '/assets/brands/rajakumari-group.png', hasColor: true },
+  { name: 'Nesto', logo: '/assets/brands/nesto.png', hasColor: true },
+  { name: 'Nahdi Mandi', logo: '/assets/brands/nahdi-mandi.png', hasColor: false },
 ];
+
+/* Repeat twice per track half so ultra-wide viewports (1920px+) never show an empty gap */
+const MARQUEE_HALF = [...BRANDS, ...BRANDS];
+
+function BrandTrackSet({ hidden = false }) {
+  return (
+    <div className="inline-flex items-center" aria-hidden={hidden || undefined}>
+      {MARQUEE_HALF.map((b, idx) => (
+        <div
+          key={`${b.name}-${idx}`}
+          className="brand-logo-item flex items-center justify-center shrink-0 px-8 sm:px-14"
+        >
+          <img
+            src={b.logo}
+            alt={hidden ? '' : b.name}
+            loading="lazy"
+            className={`brand-logo-img ${
+              b.hasColor ? 'brand-logo-img--color' : 'brand-logo-img--mono'
+            } h-16 sm:h-20 w-auto max-w-[180px] object-contain select-none`}
+          />
+        </div>
+      ))}
+    </div>
+  );
+}
 
 export default function BrandsGrid() {
   return (
-    <div className="w-full mt-24 text-center">
-      <span className="block font-body text-xs font-semibold uppercase tracking-[0.14em] text-white/60 mb-8">
+    <section className="w-full mt-24 md:mt-32" aria-label="Brands I've created for">
+      <span className="block font-body text-xs sm:text-[13px] font-semibold uppercase tracking-[0.16em] text-white/55 mb-6 text-center px-4">
         Brands I've created for
       </span>
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-5 sm:gap-6 max-w-4xl mx-auto px-4 sm:px-0">
-        {BRANDS.map((b, idx) => (
-          <div
-            key={idx}
-            style={{ backgroundColor: 'rgba(255, 255, 255, 0.92)' }}
-            className="flex items-center justify-center h-24 sm:h-24 px-6 py-4 rounded-[12px] transition-all duration-200 hover:scale-[1.03] hover:!bg-white shadow-sm group"
-          >
-            <img
-              src={b.logo}
-              alt={b.name}
-              loading="lazy"
-              className="max-h-12 sm:max-h-14 max-w-[85%] w-auto h-auto object-contain block mx-auto transition-transform duration-200"
-            />
-          </div>
-        ))}
+
+      {/* Full-width marquee strip with hairline rules above and below only */}
+      <div className="w-full border-y border-white/15 py-6 sm:py-8 overflow-hidden select-none">
+        <div className="brands-marquee-track">
+          <BrandTrackSet />
+          <BrandTrackSet hidden />
+        </div>
       </div>
-    </div>
+    </section>
   );
 }

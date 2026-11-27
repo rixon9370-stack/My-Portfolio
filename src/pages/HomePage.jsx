@@ -4,6 +4,7 @@ import Hero from '../components/Hero';
 import Ticker from '../components/Ticker';
 import ProjectsSection from '../components/ProjectsSection';
 import AboutSection from '../components/AboutSection';
+import BrandsGrid from '../components/BrandsGrid';
 import ServicesSection from '../components/ServicesSection';
 import WorkflowSection from '../components/WorkflowSection';
 import CtaSection from '../components/CtaSection';
@@ -18,11 +19,16 @@ export default function HomePage() {
         <Ticker />
         <ProjectsSection />
         {/* Content below sticky panels must sit above them with higher z-index */}
-        <div className="bg-[#0a0a0c] relative z-20 px-4 sm:px-6 md:px-8">
-          <AboutSection />
-          <ServicesSection />
-          <WorkflowSection />
-          <CtaSection />
+        <div className="bg-[#0a0a0c] relative z-20">
+          <div className="px-4 sm:px-6 md:px-8">
+            <AboutSection />
+          </div>
+          <BrandsGrid />
+          <div className="px-4 sm:px-6 md:px-8">
+            <ServicesSection />
+            <WorkflowSection />
+            <CtaSection />
+          </div>
         </div>
       </main>
       <div className="relative z-20">
